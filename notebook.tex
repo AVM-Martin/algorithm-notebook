@@ -1,0 +1,70 @@
+% Compiled and edited by Brian Bi, modified by AVM
+
+\documentclass[9pt,a4paper]{extarticle}
+\usepackage{amsmath}
+\usepackage{multicol}
+% \usepackage{pdflscape} % un-comment for lanscape version
+
+\usepackage{verbatim} % temporarily for command options
+% ====================================================================================================
+% General
+\usepackage[portrait,twoside=false,top=18mm,bottom=15mm,left=8mm,right=8mm,footskip=5mm]{geometry}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{0mm}
+\usepackage{listings}
+\usepackage{color}
+\lstset{
+    tabsize=2,
+    basicstyle=\ttfamily\small,
+    %upquote=true,
+    aboveskip=0mm,
+    belowskip=0mm,
+    columns=fixed,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true,
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=single,
+    rulecolor=\color[rgb]{0.75,0.75,0.75},
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0,0,1},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+% ====================================================================================================
+% Header and Footer
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\setlength{\headheight}{24px}
+\setlength{\headsep}{2mm}
+\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+\pagestyle{fancy}
+\fancyhf{}
+
+\input{headfoot.tex}
+\fancypagestyle{plain}{
+    \input{headfoot.tex}
+}
+
+% ====================================================================================================
+% Documents
+\begin{document}
+% \begin{landscape} % un-comment for lanscape version
+\begin{multicols*}{2} % Disable balancing of columns on last page, which is ugly
+
+% Table Of Contents
+\tableofcontents
+\vskip2mm
+\hrule
+
+% Contents
+\input{contents.tex}
+
+% ====================================================================================================
+% end of everythings
+\end{multicols*}
+% \end{landscape} % un-comment for lanscape version
+\end{document}

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+rm notebook.aux notebook.log notebook.pdf notebook.toc
+
+pdflatex notebook.tex
+pdflatex notebook.tex
+pdflatex notebook.tex

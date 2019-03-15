@@ -1,0 +1,14 @@
+# ignore all
+*
+# un-ignore all non-executable files
+!*.*
+!*/
+
+# un-ignore generator script
+!gen
+
+# ignore all latex output
+notebook.aux
+notebook.log
+notebook.pdf
+notebook.toc

@@ -1,0 +1,6 @@
+// Rata Die day one is 0001-01-01
+int rdn(int y, int m, int d){
+	if(m < 3) y--, m += 12;
+	int res = 365*y + y/4 - y/100 + y/400;
+	return res + (153*m-457)/5 + d-306;
+}
