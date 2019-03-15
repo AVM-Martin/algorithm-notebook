@@ -1,11 +1,14 @@
 % Compiled and edited by Brian Bi, modified by AVM
 
 \documentclass[9pt,a4paper]{extarticle}
+
 \usepackage{amsmath}
 \usepackage{multicol}
-% \usepackage{pdflscape} % un-comment for lanscape version
+\usepackage{pdflscape}
 
-\usepackage{verbatim} % temporarily for command options
+\usepackage{eso-pic}
+\usepackage{graphicx}
+
 % ====================================================================================================
 % General
 \usepackage[portrait,twoside=false,top=18mm,bottom=15mm,left=8mm,right=8mm,footskip=5mm]{geometry}
@@ -53,18 +56,26 @@
 % Documents
 \begin{document}
 % \begin{landscape} % un-comment for lanscape version
-\begin{multicols*}{2} % Disable balancing of columns on last page, which is ugly
+\begin{multicols*}{2}
 
-% Table Of Contents
+% Contents
 \tableofcontents
 \vskip2mm
 \hrule
-
-% Contents
 \input{contents.tex}
 
-% ====================================================================================================
-% end of everythings
+% End of Multicols
 \end{multicols*}
 % \end{landscape} % un-comment for lanscape version
+
+% ====================================================================================================
+% Geometric Paper
+\newpage{}
+\section{Geometric Paper}
+\AddToShipoutPicture*{
+    \put(0,0){
+        \includegraphics{source/1-introduction/geometricPaper.jpg}
+    }
+}
+
 \end{document}
