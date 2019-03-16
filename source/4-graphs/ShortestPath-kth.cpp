@@ -6,15 +6,14 @@ vii g[MAXN];  priority_queue<pii>pq;
 int visit[MAXN], n, k;
 
 int solve(int s, int t){
-	FILL(visit,0);  pq.push(MP(0,s));  int ret = 0;
+	FILL(visit,0);  pq.push(mp(0,s));  int ret = 0;
 	while(!pq.empty()){
-		int awal = -pq.top().fi;
-		int f = pq.top().se; pq.pop();
-		if(visit[f]>=k)continue;
+		int awal = -pq.top().fi, f = pq.top().se;  pq.pop();
+		if(visit[f] >= k) continue;
 		visit[f]++;
-		if(f==t)ret+=awal;
-		for(auto x: g[f]) if(visit[x.fi]<k)
-			pq.push(MP(-(awal+x.se),x.fi));
+		if(f==t) ret += awal;
+		for(auto x: g[f]) if(visit[x.fi] < k)
+			pq.push(mp(-(awal+x.se),x.fi));
 	}
 	return ret;
 }
@@ -24,5 +23,5 @@ int main(){
 		int a = GI-1, b = GI-1, c = GI;
 		g[a].pb(mp(b,c));  g[b].pb(mp(a,c));
 	}
-	printf("%d\n",solve(0,n-1));
+	printf("%d\n", solve(0,n-1));
 }

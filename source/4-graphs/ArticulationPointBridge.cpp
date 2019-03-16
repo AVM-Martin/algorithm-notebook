@@ -9,13 +9,12 @@ void articulationPoint(int u){
 			if(u == dfsRoot)rootChildren++;
 			articulationPoint(v);
 			// Arti. Point
-			if(dfs_low[v] >= dfs_num[u])
-				flag[u] = true;
+			if(dfs_low[v] >= dfs_num[u]) flag[u] = true;
 			// bridge Edge(u,v)
 			if(dfs_low[v] > dfs_num[u])
 				dfs_low[u] = min(dfs_low[u],dfs_low[v]);
 		} else if(v != parent[u]){
-			dfs_low[u] = min(dfs_low[u],dfs_num[v]);
+			dfs_low[u] = min(dfs_low[u], dfs_num[v]);
 }	}	}
 //inside int main
 dfs_counter = 0;  dfs_num.assign(V,INF);

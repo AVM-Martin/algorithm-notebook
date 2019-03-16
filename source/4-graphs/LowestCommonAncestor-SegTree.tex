@@ -1,11 +1,8 @@
 \begin{verbatim}
-Let LCA(r,u,v) be the LCA of u and v with respect to
-root r. To compute LCA(r,u,v), we can compute, for any
-fixed ro (usually let ro = 1),
+Let LCA(r,u,v) be the LCA of u and v with respect to root r. To
+compute LCA(r,u,v), we can compute, for any fixed ro (let ro = 1),
 LCA(ro,r,u);    // LCA(1,r,u);
 LCA(ro,r,v);    // LCA(1,r,v);
 LCA(ro,u,v);    // LCA(1,u,v);
-and take the "odd man out", i.e., if two are equal and
-the third are different, then take the third, else if
-they are all equal, take any one.
+and take the "odd man out". Otherwise, take any one.
 \end{verbatim}

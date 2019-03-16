@@ -10,16 +10,14 @@ int N, t =0, a[100][100], pr[100];
 int S = 1<<31, s=0, k, l, x1=0,x2=0, y1=0,y2=0, j;
 
 FOR(z,N){
-	FOR(i,N)pr[i] = 0;
+	FOR(i,N) pr[i] = 0;
 	REP(i,z,N-1){
-		t = j = k = l = 0, s =1<<31;
+		t = j = k = l = 0, s = 1<<31;
 		FOR(i,n){
-			pr[i] = pr[i]+ a[x][i];
-			t = t + pr[i];
+			pr[i] = pr[i]+ a[x][i];  t = t + pr[i];
 			if(t > s)s = t, k = i, l = j;
 			if(t < 0)t = 0, j = i+1;
 		}
-		if(s > S)S = s, x1 = x, y1 = k, x2 = z, y2 = l;
+		if(s > S) S = s, x1 = x, y1 = k, x2 = z, y2 = l;
 }	}
-cout << x1 <<" "<< y1 <<" "<< x2 <<" "<< y2 <<endl;
-cout << S;
+cout << x1 <<" "<< y1 <<" "<< x2 <<" "<< y2 << endl << S;

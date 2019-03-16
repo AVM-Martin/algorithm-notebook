@@ -1,11 +1,8 @@
 const double inf = 10000.0;
-typedef long long ll;
-struct point{ double x, y;  };
-int cmp(const point &a, const point &b) {
-	return a.x < b.x;
-}
-int n, buff[10005], Y[10005], Yak[10005];
-point X[10005];
+struct point{ double x, y; };
+int cmp(const point &a, const point &b){ return a.x < b.x; }
+int n, buff[10005], Y[10005], Yak[10005];  point X[10005];
+
 double conquer(int l, int mid, int r, double dn){
 	for(int i=l,j=mid+1,k=l; i<=mid || j<=r; k++){
 		if((j>r) || (i<=mid && X[Y[i]].y<X[Y[j]].y))
@@ -15,9 +12,8 @@ double conquer(int l, int mid, int r, double dn){
 	int nak = 0;
 	REP(i,l,r){
 		Y[i] = buff[i];
-		if(fabs(X[mid].x - X[Y[i]].x) <= dn){
-			Yak[nak++] = Y[i];
-	}	}
+		if(fabs(X[mid].x - X[Y[i]].x) <= dn) Yak[nak++] = Y[i];
+	}
 	double ret = dn;
 	FOR(i,nak) REP(j,i+1,nak-1){
 		if (fabs(X[Yak[i]].y-X[Yak[j]].y)>ret) break;
@@ -34,12 +30,8 @@ double divide(int l, int r){
 	}
 	return ret;
 }
-int main(){
-	while(scanf("%d", &n) != EOF && n){
-		FOR(i,n) scanf("%lf %lf", &X[i].x, &X[i].y);
-		sort(X,X+n, cmp);
-		FOR(i,n) Y[i] = i;
-		double ans = divide(0,n-1);
-		if (fabs(ans-inf) <= EPS) printf("INF\n");
-		else printf("%.4lf\n", ans);
-}	}
+// inside int main
+int n; scanf("%d", &n);  FOR(i,n) scanf("%lf %lf", &X[i].x, &X[i].y);
+sort(X,X+n, cmp);  FOR(i,n) Y[i] = i;  double ans = divide(0,n-1);
+if(fabs(ans-inf) < EPS) printf("INF\n");
+else printf("%.4lf\n", ans);

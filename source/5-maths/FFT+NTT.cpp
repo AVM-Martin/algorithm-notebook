@@ -2,9 +2,7 @@
 // need: size of polynom <= 2^k
 // find prr (roots) => prr^1 .. prr^p-1 distinct
 // dont forget divmod and other mods
-
-typedef complex<double> cpx;
-typedef vector<cpx> vec;
+typedef complex<double> cpx;  typedef vector<cpx> vec;
 void FFT(vec& a, int sign = 1){
 	int n = a.size();
 	double theta = sign * TAU / n;
@@ -12,7 +10,7 @@ void FFT(vec& a, int sign = 1){
 	// if(sign == -1) theta = fastExp(theta, MOD-2);
 	for(int i=0,j=1; j<n-1; j++){
 		for(int k=n>>1; k>(i^=k); k>>=1);
-		if(j<i)swap(a[i],a[j]);
+		if(j<i) swap(a[i],a[j]);
 	}
 	for(int m,mh=1; (m=mh<<1)<=n; mh=m){
 		int irev = 0;
@@ -26,11 +24,11 @@ void FFT(vec& a, int sign = 1){
 				a[j] += a[k];
 				a[k] = w*x;
 	}   }   }
-	if(sign == -1) FOR(i,n) a[i]/=n;
+	if(sign == -1) FOR(i,n) a[i] /= n;
 }
 void polyMultiplication(vec& res, vec& a, vec& b){
 	res.clear();  int n = a.size()+b.size()-1;
 	REPP(i,1,n-1,i) if(n&i) n += i;
-	a.resize(n);  b.resize(n);  FFT(a);  FFT(b);
-	FOR(i,n)res.pb(a[i]*b[i]);  FFT(res,-1);
+	a.resize(n);  b.resize(n);   FFT(a);  FFT(b);
+	FOR(i,n) res.pb(a[i]*b[i]);  FFT(res,-1);
 }

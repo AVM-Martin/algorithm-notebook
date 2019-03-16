@@ -3,13 +3,12 @@ void add(int u, int p, int val){
 	for(auto v: adjList[u]){
 		if(v==p || big[v]) continue;
 		add(v,u,val);
-	}
-}
+}	}
 void dsu(int u, int p, bool keep){
 	int maks = -1, bigChild = -1;
 	for(auto v: adjList[u]){
 		if(v == p) continue;
-		if(maks< sz[v]) maks = sz[v], bigChild = v;
+		if(maks < sz[v]) maks = sz[v], bigChild = v;
 	}
 	for(auto v: adjList[u]){
 		if(v == p || v == bigChild) continue;

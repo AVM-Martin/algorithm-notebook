@@ -1,7 +1,6 @@
 void topoSort(int v){
 	vis[v] = 1;
-	FOR(i,(int)ad[v].size())
-		if(!vis[ad[v][i]]) topoSort(ad[v][i]);
+	FOR(i,(int)ad[v].size()) if(!vis[ad[v][i]]) topoSort(ad[v][i]);
 	topoSorted.pb(v);
 }
 int main(){

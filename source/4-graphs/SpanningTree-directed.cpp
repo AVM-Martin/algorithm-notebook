@@ -1,52 +1,45 @@
 int con[MAXN][MAXN], in[MAXN];
 int vis[MAXN], active[MAXN], n;
-//state: 0:unvisited, 1:visited, 2:cycle, 3:active
+//vis state: 0:unvisited, 1:visited, 2:cycle, 3:active
 int cycle(int idx, int& res){
 	if(vis[idx] == 0){
 		vis[idx] = 3;
 		if(in[idx] == -1) vis[idx] = 1;
 		else vis[idx] = cycle(in[idx],res);
-	} else if(vis[idx] == 3){
-		set<int> pseudoNodes;  int minCycle = INF;
-		for(int j=idx; ; j=in[j]){
-			pseudoNodes.insert(j);
-			minCycle <?= con[in[j]][j];
-			if(in[j]==idx)break;
-		}
-		int minCost = INF, bestParent;
-		for(auto j: pseudoNodes){
-			assert(active[j]);
-			FOR(i,n) if(active[i] && con[i][j]!=-1 && \
-			!pseudoNodes.count(i)){
-				if(minCost > con[i][j]-con[in[j]][j]){
-					minCost = con[i][j]-con[in[j]][j];
-					bestParent = i;
-				}
-				con[i][j] -= con[in[j]][j]-minCycle;
-		}	}
-		res += minCost;
-		in[idx] = bestParent;
-		for(auto j: pseudoNodes){
-			FOR(i,n) if(active[i] && i!=idx && \
-				con[i][j]!=-1) if(con[i][idx]==-1 || \
-				con[i][idx]>con[i][j])
-					con[i][idx] = con[i][j];
-			FOR(i,n)
-				if(active[i]&&i!=idx&&con[j][i]!=-1){
-					if(in[i]==j)in[i] = idx;
-					if(con[idx][i]==-1 || \
-							con[idx][i] > con[j][i])
-						con[idx][i]= con[j][i];
-			}
-			if(j != idx)active[j] = false;
-		}
-		vis[idx] = 2;
+		return vis[idx];
 	}
-	return vis[idx];
+	if(vis[idx] != 3) return vis[idx];
+	//vis[idx] == 3
+	set<int> pseudoNodes;  int minCycle = INF;
+	for(int j=idx; ; j=in[j]){
+		pseudoNodes.insert(j);
+		minCycle = min(minCycle, con[ in[j] ][j]);
+		if(in[j]==idx) break;
+	}
+	int minCost = INF, bestParent;
+	for(auto j: pseudoNodes) FOR(i,n){
+		if(active[i] && con[i][j]!=-1 && !pseudoNodes.count(i)){
+			if(minCost > con[i][j]-con[in[j]][j]){
+				minCost = con[i][j]-con[in[j]][j];
+				bestParent = i;
+			}
+			con[i][j] -= con[in[j]][j]-minCycle;
+	}	}
+	res += minCost;  in[idx] = bestParent;
+	for(auto j: pseudoNodes){
+		FOR(i,n) if(active[i] && i!=idx && con[i][j]!=-1)
+			if(con[i][idx]==-1 || con[i][idx]>con[i][j])
+				con[i][idx] = con[i][j];
+		FOR(i,n) if(active[i]&&i!=idx&&con[j][i]!=-1){
+			if(in[i]==j)in[i] = idx;
+			if(con[idx][i]==-1 || con[idx][i] > con[j][i])
+				con[idx][i]= con[j][i];
+		}
+		if(j != idx) active[j] = false;
+	} return vis[idx] = 2;
 }
 int dmst(int root){
-	int res = 0;  in[root] = -1;
-	FOR(i,n)con[i][root] = -1;
+	int res = 0;  in[root] = -1;  FOR(i,n) con[i][root] = -1;
 	FOR(i,n) if(i!=root){
 		int minCost = INF;
 		FOR(j,n) if(con[j][i]!=-1 && con[j][i]<minCost)
@@ -57,27 +50,23 @@ int dmst(int root){
 	while(1){
 		memset(vis,0,sizeof(vis));
 		bool hasCycle = cycle(root,res)==2;
-		FOR(i,n) if(active[i] && !vis[i])
-			hasCycle |=(cycle(i,res)==2);
-		if(!hasCycle)return res;
+		FOR(i,n) if(active[i]& !vis[i]) hasCycle |= cycle(i,res)==2;
+		if(!hasCycle) return res;
 }	}
 int dfs(int idx){
-	if(vis[idx])return 0;
+	if(vis[idx]) return 0;
 	int ret = 1;  vis[idx] = true;
-	FOR(i,n) if(con[idx][i] != -1)ret += dfs(i);
+	FOR(i,n) if(con[idx][i] != -1) ret += dfs(i);
 	return ret;
 }
 bool connected(int root){
 	memset(vis,0,sizeof(vis));  return dfs(root)==n;
 }
-int main(){
-	int nTC, m, u, v, w;
-	scanf("%d",&nTC);
-	REP(TC,1,nTC){
-		printf("Case #%d: ",TC);
-		scanf("%d%d",&n,&m);
-		memset(con,-1,sizeof(con));
-		FOR(i,m)scanf("%d%d%d",&u,&v,&w), con[u][v]= w;
-		if(!connected(0))puts("Possums!");
-		else printf("%d\n",dmst(0));
-}	}
+int solve(int tc){
+	printf("Case #%d: ", tc);
+	int m, u,v,w; scanf("%d %d", &n, &m);
+	memset(con,-1,sizeof(con));
+	FOR(i,m) scanf("%d %d %d", &u, &v, &w), con[u][v] = w;
+	if(!connected(0)) puts("Possums!");
+	else printf("%d\n", dmst(0));
+}

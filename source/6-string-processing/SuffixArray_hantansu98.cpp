@@ -26,9 +26,9 @@ void build(){
 	FOR(i,20){
 		FOR(j,n){
 			lst[j].se = j;
-			if(i==0)lst[j].fi = mp(s[j]-'0',0);
+			if(i==0) lst[j].fi = mp(s[j]-'0',0);
 			else lst[j].fi = mp(sparse[i-1][j], \
-						sparse[i-1][(j+(1<<(i-1)))%n]);
+				sparse[i-1][(j+(1<<(i-1)))%n]);
 		}
 		radix();
 		int pos = 0;
@@ -37,8 +37,7 @@ void build(){
 			(lst[j].fi==lst[j-1].fi) ? pos:++pos;
 }	}
 int main(){
-	scanf("%d",&n); scanf("%s", s);
-	build(); int res=0;
+	scanf("%d", &n); scanf("%s", s);  build();  int res=0;
 	FOR(i,n){
 		int posa = i, posr = res;
 		FOR(j,20) if(n&(1<<j)){

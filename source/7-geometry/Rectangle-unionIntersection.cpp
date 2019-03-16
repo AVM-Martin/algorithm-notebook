@@ -1,10 +1,8 @@
 struct event{ int ind, type;};
 struct point{ double x,y; };
 
-event events_v[350],events_h[350];
-point rect[150][3];
-bool in_set[350];
-int n;
+event events_v[350],events_h[350];  point rect[150][3];
+bool in_set[350];  int n;
 
 bool compare_x(event a,event b){ return rect[a.ind][a.type].x<rect[b.ind][b.type].x; }
 bool compare_y(event a,event b){ return rect[a.ind][a.type].y<rect[b.ind][b.type].y; }
@@ -13,16 +11,11 @@ double union_area(int e){
 	memset(in_set,false,sizeof(in_set));
 	sort(events_v,events_v + e, compare_x);
 	sort(events_h,events_h + e, compare_y);
-	double area = 0;
-	in_set[events_v[0].ind] = 1;
+	double area = 0;  in_set[events_v[0].ind] = 1;
 	REP(i,1,e-1){
-		event c = events_v[i];
-		int cnt = 0;
+		event c = events_v[i];  int cnt = 0;  double begin_y;
 		double delta_x = rect[c.ind][c.type].x - rect[events_v[i-1].ind][events_v[i-1].type].x;
-		double begin_y;
-		if(delta_x == 0){
-			in_set[c.ind] = (c.type == 0);  continue;
-		}
+		if(delta_x == 0){ in_set[c.ind] = (c.type == 0);  continue; }
 		FOR(j,e){
 			if(in_set[events_h[j].ind] == 1){
 				if(events_h[j].type == 0){
@@ -58,6 +51,5 @@ int main(){
 			events_h[2*a + 1].ind = a;
 			events_h[2*a + 1].type = 1;
 		}
-		double area = union_area(2*n);
-		printf("%d %.2lf\n",tc,area);
+		printf("%d %.2lf\n", tc, union_area(2*n));
 }	}

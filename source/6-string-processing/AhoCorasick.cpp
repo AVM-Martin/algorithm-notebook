@@ -1,53 +1,25 @@
-struct Trie{
-	Trie *next[52], *fail;  vi label;  bool match;
-	Trie(){
-		fail = NULL;  match = false;  label.clear();
-		memset(next,0,sizeof(next));
-}	};
-void build_Trie(Trie** a, int val){
-	int len = strlen(q_in);  Trie *p = *a;
-	FOR(w,len){
-		int idx = convert(q_in[w]);
-		if(p->next[idx] == NULL)
-			p->next[idx] = new Trie();
-		p = p->next[idx];
-	}
-	p->label.pb(val);
+// construct a trie containing all patterns using this Node
+class Node{ public: int idx, ptr[52], fail, jump; };
+// aho corasick helper
+int __fail(int idx, int idxChild, int repeat=0){
+	if(repeat == 1) return idx;
+	if(dat[idx].ptr[idxChild] != 0) return dat[idx].ptr[idxChild];
+	return __fail(dat[idx].fail, idxChild, idx==dat[idx].fail);
 }
-void build_Automation(Trie* root){
-	queue<Trie*> q;  Trie *state, *fail;
-	root->fail = NULL;  q.push(root);
-	while(!q.empty()){
-		state = q.front();  q.pop();
-		FOR(a,52){
-			if(state->next[a] == NULL) continue;
-			q.push(state->next[a]);
-			fail = state->fail;
-			while(fail!=NULL && fail->next[a]==NULL)
-				fail = fail->fail;
-			if(fail == NULL)state->next[a]->fail = root;
-			else state->next[a]->fail = fail->next[a];
+inline int __suffixLink(int idx){
+	return (dat[idx].idx != 0) ? idx : dat[idx].jump;
+}
+// aho corasick, build process by layer
+inline void ahoCorasick(){
+	queue<int> bfs; while(!bfs.empty()) bfs.pop();
+	//construct root first
+	dat[1].fail = dat[1].jump = 1;  bfs.push(1);
+	while(!bfs.empty()){
+		int idx = bfs.front(); bfs.pop();
+		//construct its children
+		FOR(i,52) if(dat[idx].ptr[i] != 0){
+			int next = dat[idx].ptr[i];
+			dat[next].fail = __fail(dat[idx].fail, i, (idx==1));
+			dat[next].jump = __suffixLink(dat[next].fail);
+			bfs.push(next);
 }	}	}
-void search_pattern(Trie* root){
-	Trie *p = root, *check;
-	int len = strlen(main_in);
-	FOR(a,len){
-		int nx = convert(main_in[a]);
-		while(p!=root && p->next[nx]==NULL)
-			p = p->fail;
-		p = p->next[nx];
-		if(p == NULL)p = root;
-		check = p;
-		while(check!=root && check->match==false){
-			int sz = check->label.size();
-			FOR(b,sz)mark[check->label[b]] = true;
-			check->match = true;  check = check->fail;
-}	}	}
-void clear_Automation(Trie* root){
-	queue<Trie*> q;  Trie *nx;  q.push(root);
-	while(!q.empty()){
-		nx = q.front();  q.pop();
-		FOR(a,52) if(nx->next[a] != NULL)
-			q.push(nx->next[a]);
-		nx->label.clear();  delete nx;
-}	}

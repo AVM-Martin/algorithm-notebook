@@ -1,19 +1,23 @@
+\textbf{Let}
 \begin{verbatim}
-Let:
 z as first unbalanced node
 y as larger height child of z
 x as larger height child of y
+\end{verbatim}
 
-Case:
-z ->L y ->L x (LL Case): rotateRight(z)
-z ->L y ->R x (LR Case): rotateLeft(y), rotateRight(z)
-z ->R y ->L x (RL Case): rotateRight(y), rotateLeft(z)
-z ->R y ->R x (RR Case): rotateLeft(z)
+\textbf{Case}
+\begin{verbatim}
+z  -->L  y  -->L  x  (LL Case): rotateRight(z)
+z  -->L  y  -->R  x  (LR Case): rotateLeft(y), rotateRight(z)
+z  -->R  y  -->L  x  (RL Case): rotateRight(y), rotateLeft(z)
+z  -->R  y  -->R  x  (RR Case): rotateLeft(z)
+\end{verbatim}
 
-Rotation:
-||       y                          x        ||
-||      / \     Right Rotation     /  \      ||
-||     x   T3   - - - - - - - >   T1   y     ||
-||    / \       < - - - - - - -       / \    ||
-||   T1  T2     Left Rotation       T2  T3   ||
+\textbf{Rotation}
+\begin{verbatim}
+||         y                              x          ||
+||        / \       Right Rotation       /  \        ||
+||       x   T3     - - - - - - - >     T1   y       ||
+||      / \         < - - - - - - -         / \      ||
+||     T1  T2       Left Rotation         T2  T3     ||
 \end{verbatim}

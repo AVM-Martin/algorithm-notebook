@@ -1,10 +1,10 @@
 // array size: 2N     data inside N..2N-1 0-based
 
 void build(){ // build the tree
-	REV(i,n-1,1)t[i] = t[i<<1]+t[i<<1|1];
+	REV(i,n-1,1)t[i] = t[i<<1] + t[i<<1|1];
 }
 void updPURQ(int pos, int val){
-	for(t[pos+=n] = val; pos>>=1;)
+	for(t[pos+=n] = val; pos>>=1; )
 		t[pos] = combine(t[pos<<1], t[pos<<1|1]);
 }
 int queryPURQ(int l, int r){
@@ -25,26 +25,21 @@ int queryRUPQ(int pos, int res = 0){
 	return res;
 }
 void pushRUPQ(){ // inspect all elements: O(n)
-	REP(i,1,n-1){
-		t[i<<1] += t[i];  t[i<<1|1] += t[i];
-		t[i] = 0;
-}	}
+	REP(i,1,n-1) t[i<<1] += t[i], t[i<<1|1] += t[i], t[i] = 0;
+}
 // h = height of the tree (log)
-int h = sizeof(int) * 8 - __builtin_clz(n);
-int d[N];
+int d[N], h = sizeof(int) * 8 - __builtin_clz(n);
 void apply(int p, int val){
 	t[p] += val;  if(p<n) d[p] += val;
 }
 void build(int p){
-	while(p>1){
-		p>>=1;  t[p] = max(t[p<<1],t[p<<1|1]) + d[p];
-}	}
+	while(p>1) p >>= 1, t[p] = max(t[p<<1],t[p<<1|1]) + d[p];
+}
 void push(int p){
 	REV(s,h,1){
-		int i = p>>s;
+		int i = p >> s;
 		if(d[i] != 0){
-			apply(i<<1, d[i]);  apply(i<<1|1, d[i]);
-			d[i] = 0;
+			apply(i<<1, d[i]);  apply(i<<1|1, d[i]);  d[i] = 0;
 }	}	}
 void inc(int l, int r, int val){
 	l+=n;  r+=n;  int lo=l, hi=r;

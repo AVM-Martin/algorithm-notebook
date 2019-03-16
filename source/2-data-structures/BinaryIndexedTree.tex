@@ -1,7 +1,10 @@
+\textbf{Range [l..r] Update}
 \begin{verbatim}
-Range [l..r] Update
-upd(BITree1, l, val);    upd(BITree2, l, val*(l-1));
-upd(BITree1, r+1, -val); upd(BITree2, r+1, -val*r);
-Range [1..k] Query
+upd(BITree1, l, val);     upd(BITree2, l, val*(l-1));
+upd(BITree1, r+1, -val);  upd(BITree2, r+1, -val*r);
+\end{verbatim}
+
+\textbf{Range [1..k] Query}
+\begin{verbatim}
 que(BITTree1, k)* k - que(BITTree2, k);
 \end{verbatim}
