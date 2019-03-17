@@ -6,7 +6,6 @@ int extEuclid(int a, int b, int& x, int& y){
 	int x1 = y, y1 = x-(a/b)*y;  x=x1;  y=y1;  return res;
 }
 bool linearDiop(int a,int b,int c, int& x,int& y){
-    int d = extEuclid(a,b,x,y);
-    if(c%d != 0) return false;
+    int d = extEuclid(a,b,x,y);  if(c%d != 0) return false;
     x *= c/d;  y *= c/d;  return true;
 } // Is ax + by = c has integral solution?

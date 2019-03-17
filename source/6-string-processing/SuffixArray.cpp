@@ -21,9 +21,8 @@ void sparse(char s[], int n){
 			ret[i+1].se = i;
 			if(j == 0) ret[i+1].fi = mp((int)(s[i]-'a'+1), -1);
 			else{
-				int mask = (i + (1<<(j-1))) % n;
 				ret[i+1].fi.fi = dat[i][j-1];
-				ret[i+1].fi.se = dat[mask][j-1];
+				ret[i+1].fi.se = dat[(i + (1<<(j-1))) % n][j-1];
 		}   }
 		sort(ret+1,ret+1+n); // radix(ret, 1,n);
 		//iterate
@@ -32,6 +31,12 @@ void sparse(char s[], int n){
 			if(ret[i-1].fi == ret[i].fi) dat[ret[i].se][j] = pos;
 			if(ret[i-1].fi != ret[i].fi) dat[ret[i].se][j] = ++pos;
 }	}	}
+int getLCP(int a, int b, int n, int res=0){
+    if(a==b) return n;
+    FORD(i,22) if(dat[a][i] == dat[b][i])
+        a += (1<<i), b += (1<<i), res += (1<<i);
+    return res;
+}
 int solve(){
 	int n;  char s[200005];  scanf("%d %s", &n, s);  sparse(s,n);
 	int res = 0;
