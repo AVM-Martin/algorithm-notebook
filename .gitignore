@@ -1,12 +1,3 @@
-# ignore all
-*
-# un-ignore all non-executable files
-!*.*
-!*/
-
-# un-ignore generator script
-!gen
-
 # ignore COVA folder
 cova/*
 
