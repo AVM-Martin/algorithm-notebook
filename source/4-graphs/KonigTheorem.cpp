@@ -19,6 +19,6 @@ int mcbm = 0;
 REP(i,1,n) memset(visitR, 0, sizeof(visitR)), mcbm += aug(i);
 // recover
 memset(visitL,0,sizeof(visitL));  memset(visitR,0,sizeof(visitR));
-REP(i,1,n) if(matchL[i]==-1) aug(i);
-REP(i,1,n) if(!visitL[i]) printf(" r%d",i); // pick
-REP(i,1,m) if(visitR[i]) printf(" c%d",i);  // pick
+REP(i,1,n) if(matchL[i] == -1) aug(i);
+REP(i,1,n) if(!visitL[i]) printf(" r%d",i);  // pick
+REP(i,1,m) if( visitR[i]) printf(" c%d",i);  // pick
