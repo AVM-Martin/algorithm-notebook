@@ -1,0 +1,15 @@
+*      text=auto
+
+# These files are text and should be normalized (Convert crlf => lf)
+*.cpp  text eol=lf
+*.java text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.tex  text eol=lf
+
+# These files are binary and should be left untouched
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
