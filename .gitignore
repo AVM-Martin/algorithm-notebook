@@ -2,7 +2,5 @@
 cova/*
 
 # ignore all latex output
-/notebook.*
-
-# un-ignore latex files
-!/*.tex
+Notebook.*
+notebook.pdf

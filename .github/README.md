@@ -18,15 +18,15 @@ My personal team notebook. Run "./gen" to generate the notebook
 
 ## Contains backslash
 
-* ---AVL Tree (3)---
 * DP - Min Cut Polygon Triagulation
 * DP CH
 * Manhattan Spanning Tree (2)
-* INT to ROMAN (2)
 * Union Rectangle Intersection
 
 Automatic line breaks
 
+* 2 sat
+* highest label preflow push (8)
 * Line Segment Intersection (4)
 * Polygon class (2)
 * Point to Line
@@ -36,10 +36,12 @@ Automatic line breaks
 
 ## Issue
 
-* uncheck   : biginteger, 6.20
-* watch out : 6.2 (vandermonde, q-vandermonde) 6.20 6.21 7.1 7.2
-* pictures  : 6.2 6.3 6.4 6.20 6.21 7.1 7.2 8
-* adding    : *none*
+* uncheck   : biginteger, geo-transform
+* watch out : vandermonde geo-transform trig-eq poly-centroid line-intersect
+* pictures  : number-theory neclace-bracelets math-sequence geo-transform trig-eq poly-centroid line-intersect geometric paper
+* adding    : beats, hungarian, pbds
+* review    : pbds, 2 sat, highest label preflow push
+* compare   : lichao, hopcroft karp, hungarian, highest label preflow push
 
 ## Todo
 
