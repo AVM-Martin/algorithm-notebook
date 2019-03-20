@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+# info
+gen_printUsage() {
+    echo -e "usage: ./gen <command>"
+    echo -e ""
+    echo -e "\e[1;93mAvailable commands\e[0m"
+    echo -e "  clean         Clean directory"
+    echo -e "  generate      Generate pdf"
+    echo -e ""
+    echo -e "\e[1;93mDefault commands\e[0m"
+    echo -e "  clean"
+    echo -e "  generate"
+}
+
 # remove
 gen_clean() {
     touch Notebook.avm
@@ -38,7 +51,7 @@ gen_main() {
     elif [ $1 = "generate" ]; then
         gen_generate
     else
-        echo -e "Nothing todo"
+        gen_printUsage
     fi
 }
 
