@@ -17,23 +17,18 @@ My personal team notebook. Run "./gen" to generate the notebook
 
 # Note
 
-## Contains backslash
+## Contains automatic line breaks
 
 * DP - Min Cut Polygon Triagulation
 * DP CH
 * Manhattan Spanning Tree (2)
-* Union Rectangle Intersection
-
-Automatic line breaks
-
 * 2 sat
-* highest label preflow push (8)
 * Line Segment Intersection (4)
 * Polygon class (2)
 * Point to Line
 * Line to Segment
 * Polygon diameter
-* Union Rectangle Intersection (3)
+* Union Rectangle Intersection (4)
 
 ## Issue
 
