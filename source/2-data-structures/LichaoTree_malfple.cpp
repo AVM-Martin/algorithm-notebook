@@ -9,7 +9,7 @@ void add(int idx, int left, int right, int v){
 	int mid = (left+right)/2;
 	bool flipleft = getv(v, left) < getv(tree[idx], left);
 	bool flipmid = getv(v, mid) < getv(tree[idx], mid);
-	if(flipmid)swap(tree[idx], v);
+	if(flipmid) swap(tree[idx], v);
 	if(left == right) // do nothing
 	else if(flipleft == flipmid) add(idx<<1|1, mid+1, right, v);
 	else add(idx<<1, left, mid, v);

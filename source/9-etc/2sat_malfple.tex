@@ -1,3 +1,4 @@
+\begin{large}
 // Source: https://github.com/malfple/quickpastetemplate/ \\
 A special case of boolean satisfiability. Can a boolean equation equates to true?
 
@@ -11,7 +12,8 @@ if $x_i \to \neg x_i$ then $x_i$ has to be \textbf{FALSE}. This is valid for
 If in doubt: You need to record the members of each scc as an addition to the tarjan implementation below. \\
 \begin{lstlisting}
 iterate i = sccid..1:
-if scc[i] doesn’t have value, set to false
-set the negation of the members of scc[i] to their respective value. The scc that they’re in, now have a value.
+if scc[i] doesn't have value, set to false
+set the negation of the members of scc[i] to their respective value. The scc that they're in, now have a value.
 if scc[i] has value true, all of its children has to be true
 \end{lstlisting}
+\end{large}

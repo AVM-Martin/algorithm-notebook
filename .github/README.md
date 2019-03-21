@@ -13,6 +13,7 @@ My personal team notebook. Run "./gen" to generate the notebook
 * Create a new branch in order to contribute your source code.
 * Use tab indentation instead of spaces
 * Create a compact file with ruler at 70 (code) or 79 (tex),
+* Create equation in latex with huge fontsize (not Huge)
 
 # Note
 
@@ -36,12 +37,12 @@ Automatic line breaks
 
 ## Issue
 
-* uncheck   : biginteger, geo-transform
-* watch out : vandermonde geo-transform trig-eq poly-centroid line-intersect
-* pictures  : number-theory neclace-bracelets math-sequence geo-transform trig-eq poly-centroid line-intersect geometric paper
-* adding    : beats, hungarian, pbds
+* uncheck   : biginteger
+* watch out : vandermonde trig-eq
+* pictures  : number-theory neclace-bracelets math-sequence mobius trig-eq geometric paper
+* adding    : *none*
 * review    : pbds, 2 sat, highest label preflow push
-* compare   : lichao, hopcroft karp, hungarian, highest label preflow push
+* compare   : hopcroft karp, hungarian, highest label preflow push
 
 ## Todo
 
