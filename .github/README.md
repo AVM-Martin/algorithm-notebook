@@ -39,7 +39,8 @@ Automatic line breaks
 
 * uncheck   : biginteger
 * watch out : vandermonde trig-eq
-* pictures  : number-theory neclace-bracelets math-sequence mobius trig-eq geometric paper
+* pictures  : number-theory trig-eq
+* pics (fix): necklace bracelets faulhaber1 faulhaber2 mobius geom-paper
 * adding    : *none*
 * review    : pbds, 2 sat, highest label preflow push
 * compare   : hopcroft karp, hungarian, highest label preflow push
