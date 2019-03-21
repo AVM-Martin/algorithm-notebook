@@ -43,7 +43,7 @@ Automatic line breaks
 * pics (fix): necklace bracelets faulhaber1 faulhaber2 mobius geom-paper
 * adding    : *none*
 * review    : *none*
-* compare   : pbds, hopcroft karp, hungarian, highest label preflow push
+* compare   : hopcroft karp, hungarian
 
 ## Todo
 
