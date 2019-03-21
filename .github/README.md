@@ -37,13 +37,13 @@ Automatic line breaks
 
 ## Issue
 
-* uncheck   : biginteger
+* uncheck   : biginteger, highest-label-preflow-push_loj
 * watch out : vandermonde trig-eq
 * pictures  : number-theory trig-eq
 * pics (fix): necklace bracelets faulhaber1 faulhaber2 mobius geom-paper
 * adding    : *none*
-* review    : pbds, 2 sat, highest label preflow push
-* compare   : hopcroft karp, hungarian, highest label preflow push
+* review    : *none*
+* compare   : pbds, hopcroft karp, hungarian, highest label preflow push
 
 ## Todo
 
