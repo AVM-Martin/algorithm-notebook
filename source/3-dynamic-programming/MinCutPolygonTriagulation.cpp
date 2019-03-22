@@ -8,8 +8,7 @@ int minCutPolygonTriagulation(){
 	//DP
 	FOR(xx,n) for(int i=0,j=xx; j<n; i++,j++){
 		dp[i][j] = (j<i+2) ? 0 : INF;
-		REP(k,i+1,j-1) dp[i][j] = min(dp[i][j], \
-			dp[i][k]+dp[k][j] + getCost(dat[i],dat[j],dat[k]) );
+		REP(k,i+1,j-1) dp[i][j] = min(dp[i][j], dp[i][k]+dp[k][j] + getCost(dat[i],dat[j],dat[k]) );
 	}
 	return (dp[0][n-1]-res) >> 1;
 }

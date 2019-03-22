@@ -1,8 +1,7 @@
-# ignore COVA folder
+# ignore COVA and TEMPLATE folder
 cova/*
+template/*
 
 # ignore all latex output
-notebook.aux
-notebook.log
+Notebook.*
 notebook.pdf
-notebook.toc

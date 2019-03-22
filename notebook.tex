@@ -14,11 +14,35 @@
 
 % ====================================================================================================
 % General
-\usepackage[portrait,twoside=false,top=18mm,bottom=15mm,left=8mm,right=8mm,footskip=5mm]{geometry}
+\usepackage[portrait,twoside=false,top=18mm,bottom=15mm,left=5mm,right=5mm,footskip=5mm]{geometry}
 \setlength{\parindent}{0mm}
 \setlength{\parskip}{0mm}
 \setlength{\baselineskip}{0mm}
 \usepackage{color}
+
+% ====================================================================================================
+% Header and Footer
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\setlength{\headheight}{24px}
+\setlength{\headsep}{2mm}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\fancyhf{}
+
+\input{headfoot.tex}
+\fancypagestyle{plain}{
+    \input{headfoot.tex}
+}
+
+% ====================================================================================================
+% Hyperlink TOC
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    % linkcolor=blue,  %choose some color if you want links to stand out
+}
 
 % ====================================================================================================
 % listing settings
@@ -41,21 +65,6 @@
 }
 
 % ====================================================================================================
-% Header and Footer
-\usepackage{lastpage}
-\usepackage{fancyhdr}
-\setlength{\headheight}{24px}
-\setlength{\headsep}{2mm}
-\renewcommand{\footrulewidth}{0.4pt}
-\pagestyle{fancy}
-\fancyhf{}
-
-\input{headfoot.tex}
-\fancypagestyle{plain}{
-    \input{headfoot.tex}
-}
-
-% ====================================================================================================
 % Documents
 \begin{document}
 \begin{landscape}
@@ -70,18 +79,19 @@
 
 \begin{multicols*}{2}
 \input{contents.tex}
+\vfill \null \input{cova/images.tex}
 \end{multicols*}
 
 \end{landscape}
 
 % ====================================================================================================
 % Geometric Paper
-\newpage{}
-\section{Geometric Paper}
-\AddToShipoutPicture*{
-    \put(0,0){
-        \includegraphics{source/1-introduction/geometricPaper.jpg}
-    }
-}
+% \newpage{}
+% \section{Geometric Paper}
+% \AddToShipoutPicture*{
+%     \put(0,0){
+%         \includegraphics{source/1-introduction/geometricPaper.jpg}
+%     }
+% }
 
 \end{document}

@@ -13,33 +13,32 @@ My personal team notebook. Run "./gen" to generate the notebook
 * Create a new branch in order to contribute your source code.
 * Use tab indentation instead of spaces
 * Create a compact file with ruler at 70 (code) or 79 (tex),
+* Create equation in latex with huge fontsize (not Huge)
 
 # Note
 
-## Contains backslash
+## Contains automatic line breaks
 
-* ---AVL Tree (3)---
 * DP - Min Cut Polygon Triagulation
 * DP CH
 * Manhattan Spanning Tree (2)
-* INT to ROMAN (2)
-* Union Rectangle Intersection
-
-Automatic line breaks
-
+* 2 sat
 * Line Segment Intersection (4)
 * Polygon class (2)
 * Point to Line
 * Line to Segment
 * Polygon diameter
-* Union Rectangle Intersection (3)
+* Union Rectangle Intersection (4)
 
 ## Issue
 
-* uncheck   : biginteger, 6.20
-* watch out : 6.2 (vandermonde, q-vandermonde) 6.20 6.21 7.1 7.2
-* pictures  : 6.2 6.3 6.4 6.20 6.21 7.1 7.2 8
+* uncheck   : biginteger, highest-label-preflow-push_loj
+* watch out : vandermonde trig-eq
+* pictures  : number-theory trig-eq
+* pics (fix): necklace bracelets faulhaber1 faulhaber2 mobius geom-paper
 * adding    : *none*
+* review    : *none*
+* compare   : hopcroft karp, hungarian
 
 ## Todo
 

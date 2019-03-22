@@ -31,8 +31,7 @@ int main(){
 	REP(i,1,n) dp[i][1] = sum[i];  int pt = 0;
 	REP(i,2,k){
 		getpoint(i);  pt = 0;
-		REP(j,1,n) while(pt<v.size()-1 && \
-			v[pt].getval(s[j]) > v[pt+1].getval(s[j])) pt++;
+		REP(j,1,n) while(pt<v.size()-1 && v[pt].getval(s[j]) > v[pt+1].getval(s[j])) pt++;
 		dp[j][i] = sum[j]+v[pt].getval(s[j]);
 	}
 	printf("%lld\n", dp[n][k]);

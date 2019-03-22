@@ -24,8 +24,7 @@ double union_area(int e){
 					++cnt;
 				}
 				else if(--cnt == 0){
-					double delta_y = \
-						rect[events_h[j].ind][1].y - begin_y;
+					double delta_y = rect[events_h[j].ind][1].y - begin_y;
 					area += delta_x * delta_y;
 		}	}	}
 		in_set[c.ind ] = (c.type == 0);

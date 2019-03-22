@@ -24,11 +24,9 @@ void AddEdges(){
 	sort(p, p+n, sortpoint);
 	BIT = vi(axis.size(),-1);
 	FOR(a,n){
-		int pos = lower_bound(axis.begin(), \
-			axis.end(), p[a].diff) - axis.begin();
+		int pos = lower_bound(axis.begin(), axis.end(), p[a].diff) - axis.begin();
 		int nearest = GetNearest(pos);
-		if(nearest != -1) Raw_Edges.pb(mp(mp(p[a].id, \
-			p[nearest].id),p[nearest].sum - p[a].sum));
+		if(nearest != -1) Raw_Edges.pb(mp(mp(p[a].id, p[nearest].id),p[nearest].sum - p[a].sum));
 		Insert(pos,a);
 }	}
 int main(){

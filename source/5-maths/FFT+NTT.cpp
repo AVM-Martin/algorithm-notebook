@@ -31,4 +31,4 @@ void polyMultiplication(vec& res, vec& a, vec& b){
 	REPP(i,1,n-1,i) if(n&i) n += i;
 	a.resize(n);  b.resize(n);   FFT(a);  FFT(b);
 	FOR(i,n) res.pb(a[i]*b[i]);  FFT(res,-1);
-}
+} // result: res (in vec) => (int)(real(x) + (double)0.5)

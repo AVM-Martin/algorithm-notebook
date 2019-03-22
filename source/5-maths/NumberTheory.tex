@@ -1,8 +1,13 @@
 \textbf{Bertrand's Ballot Theorem} \\
+\begin{large}
 Candidate A receives p votes and candidate B receives q votes, probability that A will be strictly ahead of B throughout count is: $\displaystyle\frac{p-q}{p+q}$ without ties and $\displaystyle\frac{p+1-q}{p+1}$ with ties
+\end{large}
 
 \textbf{Gambler's Ruin Theorem} \\
-\includegraphics[width=0.5\linewidth]{source/5-maths/gamblersRuin.png}
+\begin{huge}
+Fair: $\displaystyle P_1 = \frac{n_2}{n_1 + n_2}$ \hfill
+Unfair: $\displaystyle P_1 = \frac {1 - (p/q)^{n_2}} {1 - (p/q)^{n_1 + n_2}}$ \\
+\end{huge}
 
 \textbf{Pick Theorem} \\
 A : area of a simply closed lattice polygon;  B : number of lattice points on the edges;  I : number of points in the interior. Then \textbf{A = I + B/2 - 1}
@@ -11,7 +16,9 @@ A : area of a simply closed lattice polygon;  B : number of lattice points on th
 If GCD is 1 then required largest amount is (X*Y)-(X+Y) and total count is (X-1)*(Y-1)/2
 
 \textbf{Erdos Gallai Theorem} \\
+\begin{large}
 A sequence of non-negative integers $ d_1 \leq \dotsc \leq d_n $, can be represented as the degree sequence of a finite simple graph on n vertices if and only if $ d_1 + \dotsc + d_n $ is even and $\displaystyle \sum_{i=1}^{i=k} d_i \leq k (k-1) + \sum_{i=k+1}^{i=n} min(d_i,k) $, holds every $ 1 \leq k \leq n $.
+\end{large}
 
 \textbf{Derangement}
 \begin{lstlisting}[language=c++]
@@ -48,8 +55,8 @@ Composite numbers n such that $a^{n-1} \equiv 1 \pmod{n}$ for every a coprime to
 // 340561, 399001, 410041, 449065, 488881, 512461
 \end{lstlisting}
 
-\textbf{Vandermonde Convolution} \\
-\includegraphics[width=0.5\linewidth]{source/5-maths/Temporary/vandermonde.png}
+% \textbf{Vandermonde Convolution} \\
+% \includegraphics[width=0.5\linewidth]{source/5-maths/Temporary/vandermonde.png}
 
 \textbf{Q-Vandermonde Convolution} \\
 \includegraphics[width=0.6\linewidth]{source/5-maths/Temporary/qVandermonde1.png}

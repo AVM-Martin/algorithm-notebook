@@ -10,6 +10,9 @@
 \subsection{Template Python 3.6}
 \lstinputlisting[language=Python]{template.py}
 
+\subsection{Bash Script}
+\lstinputlisting[language=bash]{compile.sh}
+
 \subsection{Bit Operations}
 \lstinputlisting[language=c++]{bitmanip.cpp}
 
@@ -18,8 +21,8 @@
 \section{Data Structures}
 \lstset{inputpath=source/2-data-structures/}
 
-\subsection{Efficient Segment Tree}
-\lstinputlisting[language=c++]{SegmentTree-efficient.cpp}
+% \subsection{Efficient Segment Tree}
+% \lstinputlisting[language=c++]{SegmentTree-efficient.cpp}
 
 % \subsection{Persistent Segment Tree}
 % \lstinputlisting[language=c++]{SegmentTree-persistent.cpp}
@@ -32,7 +35,7 @@
 \input{source/2-data-structures/AVL-Tree.tex}
 
 \subsection{Link Cut Tree}
-\lstinputlisting[language=c++]{LinkCut-Tree.cpp}
+\lstinputlisting[language=c++]{LinkCut-Tree_kactl.cpp}
 
 % \subsection{Tries}
 % \lstinputlisting[language=c++]{Tries.cpp}
@@ -46,16 +49,29 @@
 \subsection{DSU on Tree}
 \lstinputlisting[language=c++]{DisjointSetsUnion-onTree.cpp}
 
+\subsection{Lichao Tree}
+\lstinputlisting[language=c++]{LichaoTree.cpp}
+
 \subsection{Heavy-Light Decomposition}
 \lstinputlisting[language=c++]{HeavyLightDecomposition.cpp}
+
+\subsection{Treap}
+\lstinputlisting[language=c++]{Treap_malfple.cpp}
+
+\subsection{Segment Tree Beats}
+\lstinputlisting[language=c++]{SegmentTree-beats_hantansu98.cpp}
+
+\subsection{Policy-Based Data Structures}
+\lstinputlisting[language=c++]{../9-etc/PBDS_kactl.cpp}
+\lstinputlisting[language=c++]{../9-etc/PBDS_hantansu98.cpp}
 
 % ====================================================================================================
 % Data Structures
 \section{Dynamic Programming}
 \lstset{inputpath=source/3-dynamic-programming/}
 
-\subsection{LIS (Longest Increasing Subsequence)}
-\lstinputlisting[language=c++]{LongestIncreasingSubsequence.cpp}
+% \subsection{LIS (Longest Increasing Subsequence)}
+% \lstinputlisting[language=c++]{LongestIncreasingSubsequence.cpp}
 
 \subsection{Cyclic LCS (Longest Common Subsequence)}
 \lstinputlisting[language=c++]{LongestCommonSubsequence-cyclic.cpp}
@@ -100,20 +116,25 @@
 \subsection{k-th Shortest Path}
 \lstinputlisting[language=c++]{ShortestPath-kth.cpp}
 
+\subsection{Shortest Path - MMG Algorithm}
+\lstinputlisting[language=c++]{ShortestPath-mmgAlgorithm.cpp}
+
 \subsection{Manhattan Spanning Tree}
 \lstinputlisting[language=c++]{SpanningTree-manhattan.cpp}
 
 \subsection{Directed MST}
 \lstinputlisting[language=c++]{SpanningTree-directed.cpp}
 
-\subsection{Bellman Ford (Negative Cycle Detection)}
-\lstinputlisting[language=c++]{BellmanFord.cpp}
+% \subsection{Bellman Ford (Negative Cycle Detection)}
+% \lstinputlisting[language=c++]{BellmanFord.cpp}
 
 \subsection{Dinic Algorithm}
 \lstinputlisting[language=c++]{Flow-DinicAlgorithm.cpp}
 
-\subsection{Lowest Common Ancestor (SegTree)}
-\lstinputlisting[language=c++]{LowestCommonAncestor-SegTree.cpp}
+% \subsection{Lowest Common Ancestor (SegTree)}
+% \lstinputlisting[language=c++]{LowestCommonAncestor-SegTree.cpp}
+
+\subsection{Lowest Common Ancestor (Theorem)}
 \input{source/4-graphs/LowestCommonAncestor-SegTree.tex}
 
 \subsection{Min Cost Max Flow}
@@ -122,8 +143,8 @@
 \subsection{Min Cost Max Flow (Multiple Edges)}
 \lstinputlisting[language=c++]{Flow-MinCostMaxFlow-MultiEdges.cpp}
 
-\subsection{Max Flow (Adj List)}
-\lstinputlisting[language=c++]{Flow-MaxFlow-adjList.cpp}
+% \subsection{Max Flow (Adj List)}
+% \lstinputlisting[language=c++]{Flow-MaxFlow-adjList.cpp}
 
 \subsection{Min Cut (Stoer Wagner)}
 \lstinputlisting[language=c++]{MinCut-StoerWagner.cpp}
@@ -131,11 +152,11 @@
 \subsection{Eulerian Tour Checking}
 \lstinputlisting[language=c++]{EulerianTour-checking.cpp}
 
-\subsection{Max Bipartite Matching}
-\lstinputlisting[language=c++]{MaxBipartiteMatching-alternatingPath.cpp}
+% \subsection{Max Bipartite Matching}
+% \lstinputlisting[language=c++]{MaxBipartiteMatching-alternatingPath.cpp}
 
-\subsection{Minimum Vertex Cover}
-\lstinputlisting[language=c++]{MinimumVertexCover.cpp}
+% \subsection{Minimum Vertex Cover}
+% \lstinputlisting[language=c++]{MinimumVertexCover.cpp}
 
 \subsection{Articulation Point and Bridge}
 \lstinputlisting[language=c++]{ArticulationPointBridge.cpp}
@@ -148,6 +169,12 @@
 
 \subsection{Hopcroft Karp}
 \lstinputlisting[language=c++]{HopcroftKarp.cpp}
+\lstinputlisting[language=c++]{HopcroftKarp_kactl.cpp}
+
+\subsection{Hungarian Algorithm}
+\lstinputlisting[language=c++]{../9-etc/HungarianAlgorithm.cpp}
+\lstinputlisting[language=c++]{../9-etc/HungarianAlgorithm_malfple.cpp}
+\lstinputlisting[language=c++]{../9-etc/HungarianAlgorithm_hantansu98.cpp}
 
 \subsection{Euler Path + Euler Tour}
 \lstinputlisting[language=c++]{EulerianTour-path.cpp}
@@ -155,11 +182,15 @@
 \subsection{Edmonds Blossom}
 \lstinputlisting[language=c++]{EdmondsBlossom.cpp}
 
-\subsection{Maximum Clique}
-\lstinputlisting[language=c++]{MaximumClique.cpp}
+% \subsection{Maximum Clique}
+% \lstinputlisting[language=c++]{MaximumClique.cpp}
 
 \subsection{Recover Min-Vertex Cover from Maximum Matching}
 \input{source/9-etc/recover-MinVertexCover-from-MaxMatching.tex}
+\lstinputlisting[language=c++]{KonigTheorem.cpp}
+
+\subsection{2 Satisfiable}
+\input{source/9-etc/2sat_malfple.tex}
 
 % ====================================================================================================
 % String Processing
@@ -191,6 +222,10 @@
 \section{ETC}
 \lstset{inputpath=source/9-etc/}
 
+\subsection{Highest Label Preflow Push}
+% \lstinputlisting[language=c++]{HighestLabelPreflowPush_loj.cpp}
+\lstinputlisting[language=c++]{HighestLabelPreflowPush_kactl.cpp}
+
 \subsection{Soal TIMO 2010}
 \lstinputlisting[language=c++]{SoalTimo2010.cpp}
 
@@ -199,9 +234,6 @@
 
 % \subsection{Huffman Code}
 % \lstinputlisting[language=c++]{HuffmanCode.cpp}
-
-\subsection{Hungarian Algorithm}
-\lstinputlisting[language=c++]{HungarianAlgorithm.cpp}
 
 \subsection{Stable Marriage}
 \lstinputlisting[language=c++]{StableMarriage.cpp}
@@ -232,6 +264,9 @@
 \subsection{Necklace and Bracelets Combinatorics}
 \input{source/5-maths/Combinatorics-NecklaceBracelets.tex}
 
+\subsection{Berlekamp Massey}
+\lstinputlisting[language=c++]{Sequence-BerlekampMassey_kactl.cpp}
+
 \subsection{Mathematics Sequence Formula}
 \input{source/5-maths/Sequence-formula.tex}
 
@@ -249,12 +284,14 @@
 
 \subsection{Linear Diophantine}
 \lstinputlisting[language=c++]{LinearDiophantine.cpp}
+\lstinputlisting[language=c++]{LinearDiophantine_tourist.cpp}
 
 \subsection{Chinese Remainder Theorem}
 \lstinputlisting[language=c++]{ChineseRemainderTheorem.cpp}
 \lstinputlisting[language=c++]{ChineseRemainderTheorem_whyzker.cpp}
 
 \subsection{Euler Totient (Phi) Function}
+\input{source/5-maths/Totient.tex}
 \lstinputlisting[language=c++]{Totient.cpp}
 
 \subsection{Prime Test}
@@ -279,6 +316,7 @@
 \lstinputlisting[language=c++]{Prime-rangeSieve.cpp}
 
 \subsection{Mobius Function}
+\includegraphics[width=0.4\linewidth]{source/5-maths/Prime-Mobius.png}
 \lstinputlisting[language=c++]{Prime-Mobius.cpp}
 
 \subsection{Geometric Transformation}
