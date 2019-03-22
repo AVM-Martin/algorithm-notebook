@@ -8,8 +8,9 @@ class Graph{
 public:
 	Graph(int V){ this->V = V; }
 	void addEdge(int u, int v, int C){
-		Edge a(v, 0,C, adj[v].size());  adj[u].pb(a);
-		Edge b(u, 0,0, adj[u].size());  adj[v].pb(b);
+		Edge a(v, 0,C, adj[v].size());
+		Edge b(u, 0,0, adj[u].size());
+		adj[u].pb(a);  adj[v].pb(b);
 	}
 	bool BFS(int s, int t){
 		memset(lvl,-1,sizeof(lvl));  lvl[s] = 0;
