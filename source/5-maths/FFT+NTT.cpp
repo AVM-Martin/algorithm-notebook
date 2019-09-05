@@ -2,6 +2,9 @@
 // need: size of polynom <= 2^k
 // find prr (roots) => prr^1 .. prr^p-1 distinct
 // dont forget divmod and other mods
+//  998244353 = 119 * 2**23 + 1. Primitive root: 3.
+//  985661441 = 235 * 2**22 + 1. Primitive root: 3.
+// 1012924417 = 483 × 2**21 + 1. Primitive root: 5.
 typedef complex<double> cpx;  typedef vector<cpx> vec;
 void FFT(vec& a, int sign = 1){
 	int n = a.size();
