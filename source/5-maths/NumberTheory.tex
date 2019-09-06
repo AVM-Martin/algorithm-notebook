@@ -31,8 +31,8 @@ The number of ways a set of n elements can be partitioned into nonempty subsets
 \begin{lstlisting}[language=c++]
 ll bell[25+5][25+5];   bell[0][0] = 1;
 REP(i,1,maks){
-	bell[i][0] = bell[i-1][i-1];
-	REP(j,1,i) bell[i][j] = bell[i-1][j-1] + bell[i][j-1];
+    bell[i][0] = bell[i-1][i-1];
+    REP(j,1,i) bell[i][j] = bell[i-1][j-1] + bell[i][j-1];
 } // Example : n=10 ==> bell[10][0]
 \end{lstlisting}
 
@@ -41,8 +41,8 @@ The number of ways a set of n elements into k subsets)
 \begin{lstlisting}[language=c++]
 int stir[n+1][k+1];  REP(i,0,n) REP(j,0,k) stir[i][i] = 0;
 REP(i,1,n) REP(j,1,i){
-	if (j == 1 || i == j) stir[i][j] = 1;
-	else stir[i][j] = j*stir[i-1][j] + stir[i-1][j-1];
+    if (j == 1 || i == j) stir[i][j] = 1;
+    else stir[i][j] = j*stir[i-1][j] + stir[i-1][j-1];
 } // S(n,k) = k*S(n-1,k) + S(n-1,k-1)
 \end{lstlisting}
 
@@ -61,18 +61,18 @@ Composite numbers n such that $a^{n-1} \equiv 1 \pmod{n}$ for every a coprime to
 \textbf{Q-Vandermonde Convolution} \\
 \includegraphics[width=0.6\linewidth]{source/5-maths/Temporary/qVandermonde1.png}
 \begin{multicols*}{2}
-	int m,n \\
-	\includegraphics[width=0.7\linewidth]{source/5-maths/Temporary/qVandermonde2.png}
-    \vfill\null\columnbreak
-    int $l \geq 0$, int m,n \\
-    \includegraphics[width=0.7\linewidth]{source/5-maths/Temporary/qVandermonde3.png}
+  int m,n \\
+  \includegraphics[width=0.7\linewidth]{source/5-maths/Temporary/qVandermonde2.png}
+  \vfill\null\columnbreak
+  int $l \geq 0$, int m,n \\
+  \includegraphics[width=0.7\linewidth]{source/5-maths/Temporary/qVandermonde3.png}
 \end{multicols*}
 \begin{multicols*}{2}
-    int $l \geq 0$, int m,n \\
-    \includegraphics[width=\linewidth]{source/5-maths/Temporary/qVandermonde4.png}
-    \vfill\null\columnbreak
-    int l,m, $m \geq 0$ \\
-    \includegraphics[width=\linewidth]{source/5-maths/Temporary/qVandermonde5.png}
+  int $l \geq 0$, int m,n \\
+  \includegraphics[width=\linewidth]{source/5-maths/Temporary/qVandermonde4.png}
+  \vfill\null\columnbreak
+  int l,m, $m \geq 0$ \\
+  \includegraphics[width=\linewidth]{source/5-maths/Temporary/qVandermonde5.png}
 \end{multicols*}
 int $l,m \geq 0$, int $n \geq q \geq 0$ \\
 \includegraphics[width=0.4\linewidth]{source/5-maths/Temporary/qVandermonde6.png}

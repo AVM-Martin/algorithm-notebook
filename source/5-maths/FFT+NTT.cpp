@@ -26,7 +26,7 @@ void FFT(vec& a, int sign = 1){
 				cpx x = a[j]-a[k];
 				a[j] += a[k];
 				a[k] = w*x;
-	}   }   }
+	}	}	}
 	if(sign == -1) FOR(i,n) a[i] /= n;
 }
 void polyMultiplication(vec& res, vec& a, vec& b){

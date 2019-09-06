@@ -1,15 +1,15 @@
 int bucket[100005];  pair<pii,int> temp[100005];
 void radix(pair<pii,int> ret[], int xxxxx, int n){
-    //second
-    FOR(i,N+3) bucket[i] = 0;
-    REP(i,1,n) bucket[ret[i].fi.se]++;
-    REP(i,1,N) bucket[i] += bucket[i-1];
-    REV(i,n,1) temp[bucket[ret[i].fi.se]--] = ret[i];
-    //first
-    FOR(i,N+3) bucket[i] = 0;
-    REP(i,1,n) bucket[temp[i].fi.fi]++;
-    REP(i,1,N) bucket[i] += bucket[i-1];
-    REV(i,n,1) ret[bucket[temp[i].fi.fi]--] = temp[i];
+	//second
+	FOR(i,N+3) bucket[i] = 0;
+	REP(i,1,n) bucket[ret[i].fi.se]++;
+	REP(i,1,N) bucket[i] += bucket[i-1];
+	REV(i,n,1) temp[bucket[ret[i].fi.se]--] = ret[i];
+	//first
+	FOR(i,N+3) bucket[i] = 0;
+	REP(i,1,n) bucket[temp[i].fi.fi]++;
+	REP(i,1,N) bucket[i] += bucket[i-1];
+	REV(i,n,1) ret[bucket[temp[i].fi.fi]--] = temp[i];
 }
 int dat[100005][25];  pair<pii,int> ret[100005];
 void sparse(char s[], int n){
@@ -32,10 +32,10 @@ void sparse(char s[], int n){
 			if(ret[i-1].fi != ret[i].fi) dat[ret[i].se][j] = ++pos;
 }	}	}
 int getLCP(int a, int b, int n, int res=0){
-    if(a==b) return n;
-    FORD(i,22) if(dat[a][i] == dat[b][i])
-        a += (1<<i), b += (1<<i), res += (1<<i);
-    return res;
+	if(a==b) return n;
+	FORD(i,22) if(dat[a][i] == dat[b][i])
+		a += (1<<i), b += (1<<i), res += (1<<i);
+	return res;
 }
 int solve(){
 	int n;  char s[200005];  scanf("%d %s", &n, s);  sparse(s,n);

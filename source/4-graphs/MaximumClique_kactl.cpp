@@ -6,7 +6,6 @@
 //         down as nodes are removed.
 // Time  : O(3^{n/3}), much faster for sparse graphs
 // Status: fuzz-tested
-
 typedef bitset<128> B;
 template<class F>
 void cliques(vector<B>& eds, F f, B P = ~B(), B X={}, B R={}) {

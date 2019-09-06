@@ -1,9 +1,10 @@
-// Returns the distance from p to the line segment
-// ab. Theclosest point on ab is returned through
-// (cpx, cpy). Workscorrectly for degenerate line
-// segments (a == b).
-// REQUIRES: dist(), distToLine()
-double distToLineSegment(double ax, double ay, double bx, double by, double px, double py, double& cpx, double& cpy){
+// Returns the distance from p to the line segment ab. The closest point on ab
+// is returned through (cpx, cpy). Works correctly for degenerate line segments
+// (a == b). REQUIRES: dist(), distToLine()
+double distToLineSegment(
+	double ax, double ay, double bx, double by,
+	double px, double py, double& cpx, double& cpy
+){
 	if((bx-ax)*(px-ax) + (by-ay)*(py-ay) < EPS){
 		cpx = ax;  cpy = ay;  return dist(ax, ay, px, py);
 	}
