@@ -28,7 +28,7 @@ int main(){
 				best[j][x] = best[j-1][x];
 				pos[j][x] = pos[j-1][x];
 			} else x = -1;
-	}   }
+	}	}
 	int len = -1;
 	FORD(i,nb) if(best[nb-1][i]!=INF){ len=i;  break; }
 	printf("%d\n", len+1);
