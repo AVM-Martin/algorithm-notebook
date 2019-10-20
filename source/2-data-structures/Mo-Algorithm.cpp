@@ -1,31 +1,33 @@
-typedef pair<pii,int> iii;
-int blocks, n, l,r, q,ans, answer[300100], cnt[1000100], a[300100];
+typedef pair< pair<int,int> , int > iii;
+
+int blocks, ans, answer[300100], cnt[1000100], a[300100];
 vector<iii> v;
 
-bool cmp(iii x, iii y){
-	if(x.fi.fi/blocks == y.fi.fi/blocks) return x.fi.se < y.fi.se;
-	return x.fi.fi/blocks < y.fi.fi/blocks;
+bool cmp(iii x, iii y) {
+	if (x.first.first / blocks == y.first.first / blocks) {
+		return x.first.second < y.first.second;
+	}
+	return x.first.first / blocks < y.first.first / blocks;
 }
-void add(int position){
-	if(++cnt[a[position]] == 1) ans++;
-}
-void remove(int position){
-	if(--cnt[a[position]] == 0) ans--;
-}
-int main(){
-	scanf("%d",&n);  blocks = (int)sqrt(n);
-	FOR(i,n) scanf("%d",&a[i]);
-	scanf("%d",&q);
-	FOR(i,q) scanf("%d%d",&l,&r), v.pb( mp(mp(l-1,r-1), i) );
+void add(int position) { if (++cnt[a[position]] == 1) ans++; }
+void remove(int position) { if (--cnt[a[position]] == 0) ans--; }
+int main() {
+	int n;  scanf("%d",&n);  blocks = (int)sqrt(n);
+	for (int i=0; i<n; i++) scanf("%d",&a[i]);
+	int q;  scanf("%d",&q);
+	for (int i=0; i<q; i++) {
+		int l,r;  scanf("%d %d", &l, &r);
+		v.push_back( make_pair(make_pair(l-1,r-1), i) );
+	}
 	sort(v.begin(), v.end(), cmp);
 	int currentL = 0, currentR = -1;
-	FOR(i,(int)v.size()){
-		l = v[i].fi.fi;  r = v[i].fi.se;  int idx = v[i].se;
-		while(currentR < r) add(++currentR);
-		while(currentR > r) remove(currentR--);
-		while(currentL < l) remove(currentL++);
-		while(currentL > l) add(--currentL);
+	for (int i=0; i<(int)v.size(); i++) {
+		int l = v[i].fi.fi, r = v[i].fi.se, idx = v[i].se;
+		while (currentR < r) add(++currentR);
+		while (currentR > r) remove(currentR--);
+		while (currentL < l) remove(currentL++);
+		while (currentL > l) add(--currentL);
 		answer[idx] = ans;
 	}
-	FOR(i,q) printf("%d\n",answer[i]);
+	for (int i=0; i<q; i++) printf("%d\n", answer[i]);
 }
