@@ -1,0 +1,8 @@
+\textbf{split}: first $<$ k $\le$ second \quad
+\textbf{join}: keep the min heap properties \quad
+\textbf{do not forget} to update the data
+\begin{lstlisting}[language=c++]
+Val& operator[](Key key) {
+    node* t = find(head, key);  if(!t) t = insert(key);  return t->v;
+}
+\end{lstlisting}
