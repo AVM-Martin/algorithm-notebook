@@ -1,10 +1,9 @@
-void topoSort(int v){
+void topoSort(int v) {
 	vis[v] = 1;
-	FOR(i,(int)ad[v].size()) if(!vis[ad[v][i]]) topoSort(ad[v][i]);
-	topoSorted.pb(v);
+	for (int x: ad[v]) if (!vis[x]) topoSort(x);
+	topoSorted.push_back(v);
 }
-int main(){
-	topoSorted.clear();
-	REP(i,N) if(!vis[i]) topoSort(i);
-	reverse(topoSorted.begin(),topoSorted.end());
-}
+// inside main()
+topoSorted.clear();
+for (int i=0; i<N; i++) if (!vis[i]) topoSort(i);
+reverse(topoSorted.begin(), topoSorted.end());
