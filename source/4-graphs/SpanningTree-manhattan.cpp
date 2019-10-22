@@ -24,7 +24,7 @@ void AddEdges() {
 	sort(p, p+n, sortpoint);
 	BIT = vector<int>(axis.size(), -1);
 	for (int a=0; a<n; a++) {
-		int pos = lower_bound(axis.begin(), axis.end(), p[a].diff) - axis.begin();
+		int pos = lower_bound(axis.begin(), axis.end(), p[a].diff)-axis.begin();
 		int nearest = GetNearest(pos);
 		if (nearest != -1) Raw_Edges.push_back(make_pair(
 			make_pair(p[a].id, p[nearest].id),
