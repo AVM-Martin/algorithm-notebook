@@ -13,7 +13,8 @@ If in doubt: You need to record the members of each scc as an addition to the ta
 \begin{lstlisting}
 iterate i = sccid..1:
 if scc[i] doesn't have value, set to false
-set the negation of the members of scc[i] to their respective value. The scc that they're in, now have a value.
+set the negation of the members of scc[i] to their respective value.
+    The scc that they're in, now have a value.
 if scc[i] has value true, all of its children has to be true
 \end{lstlisting}
 \end{large}
