@@ -17,22 +17,9 @@ My personal team notebook. Run "./gen" to generate the notebook
 
 # Note
 
-## Contains automatic line breaks
-
-* DP - Min Cut Polygon Triagulation
-* DP CH
-* Manhattan Spanning Tree (2)
-* 2 sat
-* Line Segment Intersection (4)
-* Polygon class (2)
-* Point to Line
-* Line to Segment
-* Polygon diameter
-* Union Rectangle Intersection (4)
-
 ## Issue
 
-* uncheck   : biginteger, highest-label-preflow-push_loj
+* uncheck   : biginteger, geometry random stuff maxhaibara
 * watch out : vandermonde trig-eq
 * pictures  : number-theory trig-eq
 * pics (fix): necklace bracelets faulhaber1 faulhaber2 mobius geom-paper
