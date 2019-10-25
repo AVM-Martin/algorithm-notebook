@@ -1,16 +1,10 @@
-// Returns the distance from p to the line defined
-// by {a, b}.The closest point on the line is
-// returned through (cpx,cpy). Does not work for
-// degenerate lines (when answer isundefined).
-// REQUIRES: dist()
-// Formula: cp = a + (p-a).(b-a) / |b-a| * (b-a)
-double distToLine(
-    double ax, double ay, double bx, double by,
-    double px, double py, double& cpx, double& cpy
-){
-	double a = ((px-ax)*(bx-ax) + (py-ay)*(by-ay));
-	double b = ((bx-ax)*(bx-ax) + (by-ay)*(by-ay));
-	double proj = a/b;
-	cpx = ax + proj*(bx - ax);  cpy = ay + proj*(by - ay);
+// Returns the distance from p to the line defined by {a, b}.The closest point
+// on the line is returned through (cpx,cpy). Does not work for degenerate lines
+// (when answer isundefined).             cp = a + (p-a).(b-a) / |b-a| * (b-a)
+typedef double D;
+D distToLine(D ax, D ay, D bx, D by, D px, D py, D& cpx, D& cpy) {
+	D a = ((px-ax)*(bx-ax) + (py-ay)*(by-ay));
+	D b = ((bx-ax)*(bx-ax) + (by-ay)*(by-ay));
+	D proj = a/b;  cpx = ax + proj*(bx - ax);  cpy = ay + proj*(by - ay);
 	return dist(px,py, cpx,cpy);
 }
