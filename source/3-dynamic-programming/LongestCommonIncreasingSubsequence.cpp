@@ -1,36 +1,34 @@
-const int OO =(int)1e9;  const ll INF = (ll)1e18;
-int getint(){ int x;  scanf("%d", &x);  return x; }
-const int MAXN = 512;
+const int OO =(int)1e9;  const ll INF = (ll)1e18;  const int MAXN = 512;
 int na, A[MAXN],  nb, B[MAXN],  prev[MAXN][MAXN], pos[MAXN][MAXN];
-ll best[MAXN][MAXN];
+long long best[MAXN][MAXN];
 
-void printPath(int path){
-	if(prev[path>>10][path&1023] == -1)
-		printf("%d",A[path>>10]);
-	else{
+int getint() { int x;  scanf("%d", &x);  return x; }
+void printPath(int path) {
+	if(prev[path>>10][path&1023] == -1) printf("%d", A[path>>10]);
+	else {
 		printPath(prev[path>>10][path&1023]);
-		printf(" %d",A[path>>10]);
+		printf(" %d", A[path>>10]);
 }	}
-int main(){
-	na = getint();  FOR(i,na) A[i] = getint();
-	nb = getint();  FOR(i,nb) B[i] = getint();
-	FOR(i,na) FOR(j,nb) best[i][j] = INF;
-	FOR(i,na) FOR(j,nb) prev[i][j] = -1;
-	FOR(i,na){
-		int x = -1, p =0;
-		FOR(j,nb){
-			if(A[i] == B[j]){
-				int y = p;  while(best[j][y]<A[i]) y++;
+int main() {
+	na = getint();  for (int i=0; i<na; i++) A[i] = getint();
+	nb = getint();  for (int i=0; i<nb; i++) B[i] = getint();
+	for (int i=0; i<na; i++) for (int j=0; j<nb; j++) best[i][j] = INF;
+	for (int i=0; i<na; i++) for (int j=0; j<nb; j++) prev[i][j] = -1;
+	for (int i=0; i<na; i++) {
+		int x = -1, p = 0;
+		for (int j=0; j<nb; j++) {
+			if (A[i] == B[j]) {
+				int y = p;  while (best[j][y] < A[i]) y++;
 				best[j][y] = A[i];  pos[j][y] = (i<<10) + j;
-				if(y > 0) prev[i][j] = pos[j][y-1];
+				if (y > 0) prev[i][j] = pos[j][y-1];
 				x = p = y;
-			} else if(x!=-1 && best[j-1][x]<best[j][x]){
+			} else if(x != -1 && best[j-1][x] < best[j][x]) {
 				best[j][x] = best[j-1][x];
 				pos[j][x] = pos[j-1][x];
 			} else x = -1;
 	}	}
 	int len = -1;
-	FORD(i,nb) if(best[nb-1][i]!=INF){ len=i;  break; }
+	for (int i=0; i<nb; i++) if (best[nb-1][i] != INF) { len=i;  break; }
 	printf("%d\n", len+1);
-	if(len >=0) printPath(pos[nb-1][len]);  puts("");
+	if (len >=0) printPath(pos[nb-1][len]);  puts("");
 }
