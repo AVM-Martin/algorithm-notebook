@@ -1,20 +1,20 @@
 \begin{large}
-// Source: https://github.com/malfple/quickpastetemplate/ \\
-A special case of boolean satisfiability. Can a boolean equation equates to true?
+  // Source: https://github.com/malfple/quickpastetemplate/ \\
+  A special case of boolean satisfiability. Can a boolean equation equates to true?
 
-$f = \left(x_1 \lor y_1 \right) \land \dots \land \left(x_n \lor y_n \right)$ ; $x_i \lor y_i \equiv \neg x_i \to y_i \equiv \neg y_i \to x_i$
+  $f = \left(x_1 \lor y_1 \right) \land \dots \land \left(x_n \lor y_n \right)$ ; $x_i \lor y_i \equiv \neg x_i \to y_i \equiv \neg y_i \to x_i$
 
-Create a graph with 2n vertices, for each i, make 2 directed edges from $\neg x_i$ to $y_i$ and from $\neg y_i$ to $x_i$. $f$ is not satisfiable if both $x_i$ and $\neg x_i$ is in the same SCC (see Tarjan above). Note that for $\oplus$, you can convert it into the above equation. $x \oplus y = \left(x \lor y \right) \land \left( \neg x \lor \neg y \right)$ \\
+  Create a graph with 2n vertices, for each i, make 2 directed edges from $\neg x_i$ to $y_i$ and from $\neg y_i$ to $x_i$. $f$ is not satisfiable if both $x_i$ and $\neg x_i$ is in the same SCC (see Tarjan above). Note that for $\oplus$, you can convert it into the above equation. $x \oplus y = \left(x \lor y \right) \land \left( \neg x \lor \neg y \right)$ \\
 
-\textbf{Backtracking} \\
-if $x_i \to \neg x_i$ then $x_i$ has to be \textbf{FALSE}. This is valid for the opposite. This is also why if they are in the same SCC, a contradiction occurs. To assign values to $x_i$, you can use topological sort. Anything that comes earlier has to be FALSE. In the above implementation, you can use scc[i] (see NOTE). Sometimes you can just \texttt{if(scc[i] > scc[-i]) i = false, else i = true}
+  \textbf{Backtracking} \\
+  if $x_i \to \neg x_i$ then $x_i$ has to be \textbf{FALSE}. This is valid for the opposite. This is also why if they are in the same SCC, a contradiction occurs. To assign values to $x_i$, you can use topological sort. Anything that comes earlier has to be FALSE. In the above implementation, you can use scc[i] (see NOTE). Sometimes you can just \texttt{if(scc[i] > scc[-i]) i = false, else i = true}
 
-If in doubt: You need to record the members of each scc as an addition to the tarjan implementation below.
-\begin{lstlisting}
-iterate i = sccid..1:
-if scc[i] doesn't have value, set to false
-set the negation of the members of scc[i] to their respective value.
-    The scc that they're in, now have a value.
-if scc[i] has value true, all of its children has to be true
-\end{lstlisting}
+  If in doubt: You need to record the members of each scc as an addition to the tarjan implementation below.
+  \begin{lstlisting}
+  iterate i = sccid..1:
+  if scc[i] doesn't have value, set to false
+  set the negation of the members of scc[i] to their respective value.
+      The scc that they're in, now have a value.
+  if scc[i] has value true, all of its children has to be true
+  \end{lstlisting}
 \end{large}
