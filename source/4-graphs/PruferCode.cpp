@@ -6,7 +6,7 @@ void dfs(int u, int _parent) {
 
 vector<int> pruefer_code() {
 	int n = adj.size();  parent.resize(n);
-	parent[n-1] = -1;  dfs(n-1);
+	parent[n-1] = -1;  dfs(n-1, -1);
 	int ptr = -1;  vector<int> degree(n);
 
 	for (int i=0; i<n; i++) {
@@ -26,7 +26,7 @@ vector<int> pruefer_code() {
 }
 
 vector< pair<int, int> > pruefer_decode(const vector<int>& code) {
-	int n = code.size() + 2;  vector<int> degree(n, 1);
+	int n = (int)code.size() + 2;  vector<int> degree(n, 1);
 	for (int i : code) degree[i]++;
 
 	int ptr = 0;  while (degree[ptr] != 1) ptr++;
