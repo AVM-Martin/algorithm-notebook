@@ -34,9 +34,7 @@ namespace MincostMaxflow {
 					if (!vis[v]) {
 						vis[v] = 1;
 						que.push(v);
-					}
-				}
-			}
+			}	}	}
 			vis[u] = 0;
 		}
 		return dst[t] < coo;
@@ -57,8 +55,7 @@ namespace MincostMaxflow {
 			totalCost += mn * dst[t];
 		}
 		return totalCost;
-	}
-}
+}	}
 // inside main()
 MCMF::init(3, 0, 2);
 MCMF::add(0, 1, 1, 3);  MCMF::add(1, 2, 1, 10);  MCMF::add(0, 2, 1, 100);
