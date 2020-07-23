@@ -12,7 +12,7 @@ int aug(int u) {
 }
 // inside main()
 for (int i=0; i<1003; i++) {
-    matchL[i] = matchR[i] = -1, visitL[i] = visitR[i] = 0, adj[i].clear();
+	matchL[i] = matchR[i] = -1, visitL[i] = visitR[i] = 0, adj[i].clear();
 }
 int n,m,k, a,b;  scanf("%d %d %d", &n, &m, &k);
 for (int i=0; i<k; i++) scanf("%d %d", &a, &b), adj[a].pb(b);

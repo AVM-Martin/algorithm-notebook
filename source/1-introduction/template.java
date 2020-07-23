@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 class Main { // must be named as Main
-	static ArrayList A = new ArrayList<BigInteger>();
+	static ArrayList<BigInteger> A = new ArrayList<BigInteger>();
 
 	static void init() {
 		BigInteger x = new BigInteger("1656");
@@ -15,7 +15,7 @@ class Main { // must be named as Main
 		long y = A.longValue();
 		String s = A.toString();
 	}
-	public static void Main(String[] args){
+	public static void main(String[] args){
 		init();  int x;
 		Scanner in = new Scanner(System.in);
 		while (in.hasNext()) {
