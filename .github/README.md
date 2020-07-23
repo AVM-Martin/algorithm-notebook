@@ -1,6 +1,6 @@
 # CP-TeamNotebook
 
-My personal team notebook. Run "./gen" to generate the notebook
+My personal team notebook. Run "./gen.sh" to generate the notebook
 
 ## Dependencies
 
