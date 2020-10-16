@@ -3,7 +3,7 @@
 //  998244353 = 119 * 2**23 + 1. Primitive root: 3.
 //  985661441 = 235 * 2**22 + 1. Primitive root: 3.
 // 1012924417 = 483 * 2**21 + 1. Primitive root: 5.
-typedef complex<double> cpx;  typedef vector<cpx> vec;
+typedef complex<double> cpx;  typedef vector<cpx> vec; // cpx => ll
 void FFT(vec& a, int sign = 1) {
 	int n = a.size();
 	double theta = sign * TAU / n;
@@ -19,10 +19,10 @@ void FFT(vec& a, int sign = 1) {
 			cpx w = exp(cpx(0,theta*irev));  // from e^(i*theta)
 			// ll w = fastExp(theta, irev);  // pre-compute
 			for (int k=n>>2; k>(irev^=k); k>>=1);
-			for (int j=i; j<mh+i; j++) {
+			for (int j=i; j<mh+i; j++) { // modulo party here
 				int k = j+mh;  cpx x = a[j]-a[k];  a[j] += a[k];  a[k] = w*x;
 	}	}	}
-	if (sign == -1) for (int i=0; i<n; i++) a[i] /= n;
+	if (sign == -1) for (int i=0; i<n; i++) a[i] /= n; // fastExp(n, MOD-2)
 }
 void polyMultiplication(vec& res, vec& a, vec& b) {
 	res.clear();  int n = a.size() + b.size() - 1;

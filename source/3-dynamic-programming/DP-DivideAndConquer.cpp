@@ -10,7 +10,8 @@ void solve(int group, int lf, int rg, int optL , int optR) {
 	}
 	solve(group,lf,mid-1,optL,opt);  solve(group,mid+1,rg,opt,optR);
 }
-// inside main()
-// init array of dp to infinity
-// init array dp[1][i] = to cost[1][i]
-for (int i=2; i<=k; i++) solve(i,1,n,1,n);
+int inside_main() {
+	// init array of dp to infinity
+	// init array dp[1][i] = to cost[1][i]
+	for (int i=2; i<=k; i++) solve(i,1,n,1,n);
+}

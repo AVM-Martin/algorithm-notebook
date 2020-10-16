@@ -59,5 +59,6 @@ void normalize() {
 ll doit(int x, int m) {
 	n=0;  while (x) nums[n++] = x%10, x /= 10;  normalize();  return solve(0,m);
 }
-// inside main()
-int x, m;  scanf("%d %d", &x, &m);  printf("%d\n", (int)doit(x,m));
+int inside_main() {
+	int x, m;  scanf("%d %d", &x, &m);  printf("%d\n", (int)doit(x,m));
+}

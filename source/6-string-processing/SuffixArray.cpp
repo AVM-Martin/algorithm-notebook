@@ -2,12 +2,12 @@ int bucket[100005];  pair< pair<int,int> ,int> temp[100005];
 void radix(pair< pair<int,int> ,int> ret[], int xxxxx, int n){
 	// second
 	for (int i=0; i<N+3; i++) bucket[i] = 0;
-	for (int i=1; i<=n; i++)  bucket[ret[i].first.second]++;
+	for (int i=n; i>=1; i--)  bucket[ret[i].first.second]++;
 	for (int i=1; i<=N; i++)  bucket[i] += bucket[i-1];
 	for (int i=n; i>=1; i--)  temp[bucket[ret[i].first.second]--] = ret[i];
 	// first
 	for (int i=0; i<N+3; i++) bucket[i] = 0;
-	for (int i=1; i<=n; i++)  bucket[temp[i].first.first]++;
+	for (int i=n; i>=1; i--)  bucket[temp[i].first.first]++;
 	for (int i=1; i<=N; i++)  bucket[i] += bucket[i-1];
 	for (int i=n; i>=1; i--)  ret[bucket[temp[i].first.first]--] = temp[i];
 }

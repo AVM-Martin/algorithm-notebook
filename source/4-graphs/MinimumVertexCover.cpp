@@ -14,11 +14,12 @@ int solve(int idx, int flag, int prev) {
 	}
 	return res;
 }
-// inside main()
-int n; scanf("%d",&n);
-for (int i=0; i<n-1; i++) {
-	int a,b; scanf("%d %d", &a, &b);  AdjList[a].pb(b);  AdjList[b].pb(a);
+int inside_main() {
+	int n; scanf("%d",&n);
+	for (int i=0; i<n-1; i++) {
+		int a,b; scanf("%d %d", &a, &b);  AdjList[a].pb(b);  AdjList[b].pb(a);
+	}
+	memset(memo,-1,sizeof(memo));  int resa = solve(1,0,-1);
+	memset(memo,-1,sizeof(memo));  int resb = solve(1,1,-1);
+	printf("%d\n", min(resa,resb));
 }
-memset(memo,-1,sizeof(memo));  int resa = solve(1,0,-1);
-memset(memo,-1,sizeof(memo));  int resb = solve(1,1,-1);
-printf("%d\n", min(resa,resb));

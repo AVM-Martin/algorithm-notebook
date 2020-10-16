@@ -32,20 +32,20 @@ void AddEdges() {
 		));
 		Insert(pos, a);
 }	}
-// inside main()
-for (int a=0; a<n; a++) {
-	scanf("%d %d", &p[a].x, &p[a].y);
-	p[a].sum  = p[a].x + p[a].y;  p[a].diff = p[a].x - p[a].y;  p[a].id = a;
+int inside_main() {
+	for (int a=0; a<n; a++) {
+		scanf("%d %d", &p[a].x, &p[a].y);
+		p[a].sum  = p[a].x + p[a].y;  p[a].diff = p[a].x - p[a].y;  p[a].id = a;
+	}
+	for (int a=0; a<4; a++) {
+		for (int b=0; b<n; b++) {
+			if (a == 1 || a == 3) {
+				swap(p[b].x, p[b].y);  p[b].diff = p[b].x - p[b].y;
+			} else if (a == 2) {
+				p[b].x = -p[b].x;
+				p[b].sum  = p[b].x + p[b].y;
+				p[b].diff = p[b].x - p[b].y;
+		}	}
+		AddEdges();
+	}  // Do normal MST
 }
-for (int a=0; a<4; a++) {
-	for (int b=0; b<n; b++) {
-		if (a == 1 || a == 3) {
-			swap(p[b].x, p[b].y);  p[b].diff = p[b].x - p[b].y;
-		} else if (a == 2) {
-			p[b].x = -p[b].x;
-			p[b].sum  = p[b].x + p[b].y;
-			p[b].diff = p[b].x - p[b].y;
-	}	}
-	AddEdges();
-}
-// DO MST

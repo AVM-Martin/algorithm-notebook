@@ -2,11 +2,6 @@
 // Recurrence : dp[i] = min{ dp[j] + b[j]*a[i] }
 // Condition  : j < i and b[j] >= b[j+1] and a[i] <= a[i+1]
 // from O(n^2) become O(n)
-
-// Convex Hull Optimization 2
-// Recurrence : dp[i][j] = min{ dp[i-1][k] + b[k]*a[j] }
-// Condition  : k < j and b[k] >= b[k+1] and a[j] <= a[j+1]
-// from O(kn^2) become O(kn)
 struct line { long long a,b;  ll getval(ll x){ return a*x + b; } };
 long long xsmall(line l1, line l2, line l3) {
 	return (l3.b-l1.b) * (l1.a-l2.a) < (l2.b-l1.b) * (l1.a-l3.a);

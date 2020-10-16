@@ -34,16 +34,16 @@ double union_area(int e) {
 	}
 	return area;
 }
-// inside main()
-while (cin>>n && n!=0) {
-	for (int a=0; a<n; a++) {
-		double x,y,r;  cin>>x>>y>>r;
-		rect[a][0].x = x-r;  rect[a][1].x = x+r;
-		rect[a][0].y = y-r;  rect[a][1].y = y+r;
-		events_v[2*a].ind = a;   events_v[2*a + 1].ind = a;
-		events_v[2*a].type = 0;  events_v[2*a + 1].type = 1;
-		events_h[2*a].ind = a;   events_h[2*a + 1].ind = a;
-		events_h[2*a].type = 0;  events_h[2*a + 1].type = 1;
-	}
-	printf("%.2lf\n", union_area(2*n));
-}
+int inside_main() {
+	while (cin>>n && n!=0) {
+		for (int a=0; a<n; a++) {
+			double x,y,r;  cin>>x>>y>>r;
+			rect[a][0].x = x-r;  rect[a][1].x = x+r;
+			rect[a][0].y = y-r;  rect[a][1].y = y+r;
+			events_v[2*a].ind = a;   events_v[2*a + 1].ind = a;
+			events_v[2*a].type = 0;  events_v[2*a + 1].type = 1;
+			events_h[2*a].ind = a;   events_h[2*a + 1].ind = a;
+			events_h[2*a].type = 0;  events_h[2*a + 1].type = 1;
+		}
+		printf("%.2lf\n", union_area(2*n));
+}	}

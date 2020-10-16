@@ -14,3 +14,11 @@ long long toNumber(string S) { // string to ll
 void ioSync() { //iostream sync
 	ios_base::sync_with_stdio(0);  cin.tie(0);  cout.tie(0);
 }
+#define getc getchar
+template<typename T> T getnum(){
+	int sign = 1;  T ret = 0;  char c;
+	do { c = getc(); } while (c == ' ' || c == '\n');
+	if (c == '-') sign = -1;  else ret = c - '0';
+	while (c = getc(), '0' <= c && c <= '9') ret = 10 * ret + c - '0';
+	return sign * ret;
+}

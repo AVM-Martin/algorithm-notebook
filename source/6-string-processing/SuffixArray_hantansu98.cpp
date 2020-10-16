@@ -36,15 +36,16 @@ void build() {
 		for (int j=1; i<=n-1; j++) {
 			sparse[i][lst[j].se] = (lst[j].fi == lst[j-1].fi) ? pos : ++pos;
 }	}	}
-// inside main()
-scanf("%d", &n);  scanf("%s", s);  build();  int res = 0;
-for (int i=0; i<n; i++) {
-	int posa = i, posr = res;
-	for (int j=20-1; j>=0; j--) if (n & (1<<j)) {
-		if (sparse[j][posr] == sparse[j][posa]) {
-			posa = (posa+(1<<j))%n;  posr = (posr+(1<<j))%n;  continue;
-		}
-		if (sparse[j][posr] > sparse[j][posa]) res = i;
-		break;
-}	}
-printf("%d\n", res);
+int inside_main() {
+	scanf("%d", &n);  scanf("%s", s);  build();  int res = 0;
+	for (int i=0; i<n; i++) {
+		int posa = i, posr = res;
+		for (int j=20-1; j>=0; j--) if (n & (1<<j)) {
+			if (sparse[j][posr] == sparse[j][posa]) {
+				posa = (posa+(1<<j))%n;  posr = (posr+(1<<j))%n;  continue;
+			}
+			if (sparse[j][posr] > sparse[j][posa]) res = i;
+			break;
+	}	}
+	printf("%d\n", res);
+}

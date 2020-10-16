@@ -17,10 +17,11 @@ int solve(int s, int t) {
 	}	}
 	return ret;
 }
-// inside main()
-k = GI;  n = GI;
-for (int nedge=0; nedge<GI; nedge++) {
-	int a = GI-1, b = GI-1, c = GI;
-	g[a].pb(mp(b,c));  g[b].pb(mp(a,c));
+int inside_main() {
+	k = GI;  n = GI;
+	for (int nedge=0; nedge<GI; nedge++) {
+		int a = GI-1, b = GI-1, c = GI;
+		g[a].pb(mp(b,c));  g[b].pb(mp(a,c));
+	}
+	printf("%d\n", solve(0,n-1));
 }
-printf("%d\n", solve(0,n-1));

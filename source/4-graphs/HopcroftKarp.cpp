@@ -35,7 +35,8 @@ struct graph {
 		}
 		return match;
 }	};
-// inside main()
-int L,R, m, u,v;  scanf("%d %d %d", &L, &R, &m);  graph g(L,R);
-for (int i=0; i<m; i++) scanf("%d %d", &u, &v), g.addEdge(u,v);
-printf("%d\n", g.maximum_matching());
+int inside_main() {
+	int L,R, m, u,v;  scanf("%d %d %d", &L, &R, &m);  graph g(L,R);
+	for (int i=0; i<m; i++) scanf("%d %d", &u, &v), g.addEdge(u,v);
+	printf("%d\n", g.maximum_matching());
+}

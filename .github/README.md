@@ -11,9 +11,9 @@ My personal team notebook. Run "./gen.sh" to generate the notebook
 # How to contribute
 
 * Create a new branch in order to contribute your source code.
-* Use tab indentation instead of spaces
-* Create a compact file with ruler at 70 (code) or 79 (tex),
-* Create equation in latex with huge fontsize (not Huge)
+* Use tab indentation instead of spaces.
+* Create a compact file with ruler at 80.
+* Create equation in latex with huge fontsize (not Huge).
 
 # Note
 

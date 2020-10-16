@@ -65,12 +65,12 @@ public:
 		}
 		return fabs(ret / 2);
 }	};
-// inside main()
-Polygon P, Q;
-for (int nA,nB, x,y; scanf("%d",&nA)!=EOF && nA; ) {
-	for (int i=0; i<nA; i++) scanf("%d %d", &x, &y), P.addPoint(Point(x,y));
-	scanf("%d", &nB);
-	for (int i=0; i<nB; i++) scanf("%d %d", &x, &y), Q.addPoint(Point(x,y));
-	Polygon I = P.intersect(Q);
-	printf("%lf\n", P.area() + Q.area() - 2 * I.area());
-}
+int inside_main() {
+	Polygon P, Q;
+	for (int nA,nB, x,y; scanf("%d",&nA)!=EOF && nA; ) {
+		for (int i=0; i<nA; i++) scanf("%d %d", &x, &y), P.addPoint(Point(x,y));
+		scanf("%d", &nB);
+		for (int i=0; i<nB; i++) scanf("%d %d", &x, &y), Q.addPoint(Point(x,y));
+		Polygon I = P.intersect(Q);
+		printf("%lf\n", P.area() + Q.area() - 2 * I.area());
+}	}

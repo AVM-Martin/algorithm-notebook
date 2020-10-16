@@ -32,11 +32,11 @@ int mincut(int n) {
 	for (int i=n; i>=2; i--) res = min(res, reduce(i));
 	return res;
 }
-// inside main()
-for (int N,M; scanf("%d %d", &N, &M) != EOF; ) {
-	memset(m, 0, sizeof(m));
-	for (int i=0; i<M; i++) {
-		int a,b,c; scanf("%d %d %d", &a, &b, &c);  m[a][b] += c;  m[b][a] += c;
-	}
-	printf("%d\n", mincut(N));
-}
+int inside_main() {
+	for (int N,M; scanf("%d %d", &N, &M) != EOF; ) {
+		memset(m, 0, sizeof(m));
+		for (int i=0; i<M; i++) {
+			int a,b,c; scanf("%d %d %d", &a, &b, &c);  m[a][b] += c;  m[b][a] += c;
+		}
+		printf("%d\n", mincut(N));
+}	}

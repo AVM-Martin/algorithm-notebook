@@ -27,9 +27,10 @@ void doMMG(int s, int t) {
 		//push
 		secondSP[avoid] = (!heap.empty() ? heap.top().first : INF);
 }	}
-// inside main()
-// do dijkstra and save the parent of each node
-// dist[0][u]: s->u,   dist[1][u]: u->t
-dijkstra(t,1); // dijkstra with reversed edges
-dijkstra(s,0); // dijkstra normally
-doMMG(s,t);    // the result is secondSP[] or unnaffected
+int inside_main() {
+	// do dijkstra and save the parent of each node
+	// dist[0][u]: s->u,   dist[1][u]: u->t
+	dijkstra(t,1); // dijkstra with reversed edges
+	dijkstra(s,0); // dijkstra normally
+	doMMG(s,t);    // the result is secondSP[] or unnaffected
+}

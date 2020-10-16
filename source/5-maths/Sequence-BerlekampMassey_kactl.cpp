@@ -9,14 +9,14 @@ vector<long long> BerlekampMassey(vector<long long> s) {
 	int n = (int)s.size(), L = 0, m = 0;  vector<long long> C(n), B(n), T;
 	C[0] = B[0] = 1;  long long b = 1;
 	for (int i=0; i<n; i++) {
-		++m;  long long d = s[i] % mod;
-		for (int j=1; j<=L; j++) d = (d + C[j]*s[i-j]) % mod; // chosen mod = 5
+		++m;  long long d = s[i] % MOD;
+		for (int j=1; j<=L; j++) d = (d + C[j]*s[i-j]) % MOD; // chosen MOD = 5
 		if (!d) continue;
-		T = C;  long long coef = d * fastExp(b, mod-2) % mod;
-		for (int j=m; j<=n-1; j++) C[j] = (C[j] - coef*B[j-m]) % mod;
+		T = C;  long long coef = d * fastExp(b, MOD-2) % MOD;
+		for (int j=m; j<=n-1; j++) C[j] = (C[j] - coef*B[j-m]) % MOD;
 		if (2*L > i) continue;
 		L = i + 1 - L;  B = T;  b = d;  m = 0;
 	}
 	C.resize(L+1);  C.erase(C.begin());
-	for (auto& x: C) x = (mod-x) % mod;  return C;
+	for (auto& x: C) x = (MOD-x) % MOD;  return C;
 }

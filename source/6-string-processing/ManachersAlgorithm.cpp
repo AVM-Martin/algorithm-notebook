@@ -1,9 +1,9 @@
 // lps[i] means the longest palindromic substring centered at i
 // When i is even, it's between chars. Otherwise, it's on (i/2) char
 // This algorithm runs in O(n)
-int lps[200005];  char s[100005];
-void manacher(int n) {
-	for (int i=0; i<200003; i++) lps[i] = 0;
+int lps[2*N+5];
+void manacher(char s[], int n) {
+	for (int i=0; i<2*N+3; i++) lps[i] = 0;
 	lps[0] = 0;  lps[1] = 1;
 	for (int i=2; i<=2*n; i++) {
 		int l = i/2, r = (i-1)/2;

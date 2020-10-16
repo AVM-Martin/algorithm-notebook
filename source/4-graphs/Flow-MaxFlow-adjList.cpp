@@ -7,17 +7,18 @@ void augment(int v, int minedge) {
 		augment(p[v], min(minedge, res[p[v]][v]));
 		res[p[v]][v] -= f;  res[v][p[v]] += f;
 }	}
-// inside main()
-mf = 0;
-while (1) { // BFS
-	f = 0;  vi dist(maxv,INF);  dist[s] = 0;
-	queue<int> q;  q.push(s);  p.assign(maxv, -1);
-	while (!q.empty()) {
-		int u = q.front();  q.pop();
-		if (u == t) break;
-		for (auto v: adj[u]) if (dist[v] == INF && res[u][v] > 0) {
-			dist[v] = dist[u]+1, p[v] = u, q.push(v);
-	}	}
-	augment(t,INF);  mf += f;  if (f == 0) break;
+int inside_main() {
+	mf = 0;
+	while (1) { // BFS
+		f = 0;  vi dist(maxv,INF);  dist[s] = 0;
+		queue<int> q;  q.push(s);  p.assign(maxv, -1);
+		while (!q.empty()) {
+			int u = q.front();  q.pop();
+			if (u == t) break;
+			for (auto v: adj[u]) if (dist[v] == INF && res[u][v] > 0) {
+				dist[v] = dist[u]+1, p[v] = u, q.push(v);
+		}	}
+		augment(t,INF);  mf += f;  if (f == 0) break;
+	}
+	printf("%d\n", mf);
 }
-printf("%d\n", mf);

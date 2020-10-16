@@ -54,11 +54,11 @@ string search_path(int l, int r) {
 	}
 	return ret;
 }
-// inside main()
-string s1;  cin >> s1;  int z = 0;  s2 = buka(z,s1);
-memset(memo, -1, sizeof(memo));  hohoho(0,s2.length()-1);
-cout << s2 << endl << search_path(0,s2.length()-1) << endl;
-// input
+int inside_main() {
+	string s1;  cin >> s1;  int z = 0;  s2 = buka(z,s1);
+	memset(memo, -1, sizeof(memo));  hohoho(0,s2.length()-1);
+	cout << s2 << endl << search_path(0,s2.length()-1) << endl;
+}
 // 2(haue)yueuyeuue3(xxzz)zzxx
 // hauehaueyueuyeuuexxzzxxzzxxzzzzxx
 // 2(haue)yueuyeuue3(xxzz)zzxx

@@ -7,7 +7,7 @@ for (int mask=0; mask<(1<<N); mask++) {
 	for (int i=mask; i; i=(i-1)&mask) F[mask] += A[i];
 }
 // O(N * 2^N)  memory optimized, easy to code.
-for (int mask=0; mask<(1<<N); mask++) F[i] = A[i];
+for (int mask=0; mask<(1<<N); mask++) F[mask] = A[mask];
 for (int i=0; i<N; i++) for(int mask=0; mask<(1<<N); mask++) if (mask&(1<<i)) {
 	F[mask] += F[mask^(1<<i)];
 }

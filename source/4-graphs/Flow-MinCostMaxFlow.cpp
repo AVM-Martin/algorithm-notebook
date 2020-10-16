@@ -18,15 +18,15 @@ void augment(int u, int minEdge) {
 		res[p[u]][u] -= flow;  res[u][p[u]] += flow;
 		costPerFlow += cost[p[u]][u];
 }	}
-// inside main()
-// construct graph
-// make bidirectional edge from src to i
-cost[src][i]  = x;  cost[i][src]  = -x;  res[src][i]  = y;
-// make bidirectional edge from i to sink
-cost[i][sink] = x;  cost[sink[i]] = -x;  res[i][sink] = y;
-// do it
-while (bellman()) {
-	flow = 0;  augment(sink, INF);
-	if (flow == 0) break;
-	mf += flow;  totCost += costPerFlow;
-}
+int inside_main() {
+	// construct graph
+	// make bidirectional edge from src to i
+	cost[src][i]  = x;  cost[i][src]  = -x;  res[src][i]  = y;
+	// make bidirectional edge from i to sink
+	cost[i][sink] = x;  cost[sink[i]] = -x;  res[i][sink] = y;
+	// do it
+	while (bellman()) {
+		flow = 0;  augment(sink, INF);
+		if (flow == 0) break;
+		mf += flow;  totCost += costPerFlow;
+}	}

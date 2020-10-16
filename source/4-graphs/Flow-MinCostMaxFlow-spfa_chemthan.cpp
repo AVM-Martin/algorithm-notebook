@@ -56,7 +56,8 @@ namespace MincostMaxflow {
 		}
 		return totalCost;
 }	}
-// inside main()
-MCMF::init(3, 0, 2);
-MCMF::add(0, 1, 1, 3);  MCMF::add(1, 2, 1, 10);  MCMF::add(0, 2, 1, 100);
-assert(MCMF::mincost() == 113);
+int inside_main() {
+	MCMF::init(3, 0, 2);
+	MCMF::add(0, 1, 1, 3);  MCMF::add(1, 2, 1, 10);  MCMF::add(0, 2, 1, 100);
+	assert(MCMF::mincost() == 113);
+}

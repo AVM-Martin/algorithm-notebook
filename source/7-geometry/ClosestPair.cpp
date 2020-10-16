@@ -28,10 +28,11 @@ double divide(int l, int r) {
 		ret = conquer(l, (l+r)/2, r, min(dl, dr));
 	} return ret;
 }
-// inside main()
-int n;  scanf("%d", &n);
-for (int i=0; i<n; i++) scanf("%lf %lf", &X[i].x, &X[i].y);
-sort(X, X+n, cmp);  for (int i=0; i<n; i++) Y[i] = i;
-double ans = divide(0,n-1);
-if (fabs(ans-inf) < EPS) printf("INF\n");
-else printf("%.4lf\n", ans);
+int inside_main() {
+	int n;  scanf("%d", &n);
+	for (int i=0; i<n; i++) scanf("%lf %lf", &X[i].x, &X[i].y);
+	sort(X, X+n, cmp);  for (int i=0; i<n; i++) Y[i] = i;
+	double ans = divide(0,n-1);
+	if (fabs(ans-inf) < EPS) printf("INF\n");
+	else printf("%.4lf\n", ans);
+}

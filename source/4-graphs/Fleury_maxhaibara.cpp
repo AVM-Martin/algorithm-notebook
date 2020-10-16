@@ -1,4 +1,6 @@
 // Eulerian on Undirected Graph
+// To find eulerian path simply make a dummy node for the starting and ending
+// vertex. I.E start DFS from start point or end point
 bool E[1010][1010];  vector< pair<int,int> > euler;
 int vis[1010];  int color = 0;
 inline void setEdge(int cur, int next, bool val) {
@@ -23,4 +25,6 @@ void fleury(int cur) { // start from odd degree
 		if (E[cur][next] && valid(cur,next)) {
 			euler.push_back({cur,next});  setEdge(cur, next, false);
 			fleury(next);
-}	}	}
+	}	}
+	ans.pb(cur); // from ssr codebook
+}
