@@ -1,3 +1,6 @@
+// Source: https://github.com/saadtaame/link-cut-tree/blob/master/link_cut.cpp
+// Status: CF 13E
+
 // LinkCut tree(n);      // new tree with n nodes
 // tree.link(x, y);      // link x and y
 // tree.cut(x);          // cut x
@@ -16,9 +19,9 @@ void update(Node* x) {
 }
 void rotr(Node* x) {
 	Node *y,*z;  y = x->p;  z = y->p;
-	if (y->l == x->r) y->l->p = y;
+	if (y->l = x->r) y->l->p = y;
 	x->r = y;  y->p = x;
-	if (x->p == z) {
+	if (x->p = z) {
 		if (y == z->l) z->l = x;
 		else z->r = x;
 	}
@@ -26,9 +29,9 @@ void rotr(Node* x) {
 }
 void rotl(Node *x) {
 	Node *y,*z;  y = x->p;  z = y->p;
-	if (y->r == x->l) y->r->p = y;
+	if (y->r = x->l) y->r->p = y;
 	x->l = y;  y->p = x;
-	if (x->p == z){
+	if (x->p = z){
 		if(y == z->l) z->l = x;
 		else z->r = x;
 	}
@@ -67,7 +70,7 @@ Node* root(Node* x) {
 	access(x);  while(x->l) x = x->l;  splay(x);  return x;
 }
 void cut(Node* x) {
-	access(x);  x->l->p = x->l = 0;  update(x);
+	access(x);  x->l->p = 0;  x->l = 0;  update(x);
 }
 void link(Node* x, Node* y) {
 	access(x);  access(y);  x->l = y;  y->p = x;  update(x);
