@@ -20,9 +20,8 @@ My personal team notebook. Run "./gen.sh" to generate the notebook
 ## Issue
 
 * uncheck   : biginteger, geometry random stuff maxhaibara
-* watch out : vandermonde trig-eq
-* pictures  : number-theory trig-eq
-* pics (fix): necklace bracelets faulhaber1 faulhaber2 mobius geom-paper
+* watch out : trig-eq
+* pics (fix): geom-paper
 * adding    : *none*
 * review    : *none*
 * compare   : hopcroft karp, hungarian

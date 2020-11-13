@@ -1,7 +1,8 @@
 \begin{large}
   \textbf{Delannoy Number} \\
-  \includegraphics[width=0.45\linewidth]{source/5-maths/delannoy1.png} \\
-  \includegraphics[width=0.95\linewidth]{source/5-maths/delannoy2.png}
-
+  \begin{Large}
+    ${\displaystyle D(m,n)=\sum _{k=0}^{\min(m,n)}{\binom {m}{k}}{\binom {n}{k}}2^{k}}$
+  \end{Large} \\
+  $D(m,n)=\begin{cases}1 &\text{if }m=0\text{ or }n=0\\D(m-1,n) + D(m-1,n-1) + D(m,n-1)&\text{otherwise}\end{cases}$ \\
   number of paths from (0,0) to (m,n) with N, NE, and E directions.
 \end{large} \\

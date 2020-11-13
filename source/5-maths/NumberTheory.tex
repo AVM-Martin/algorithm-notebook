@@ -53,26 +53,21 @@ Composite numbers n such that $a^{n-1} \equiv 1 \pmod{n}$ for every a coprime to
 // 340561, 399001, 410041, 449065, 488881, 512461
 \end{lstlisting}
 
-% \textbf{Vandermonde Convolution} \\
-% \includegraphics[width=0.5\linewidth]{source/5-maths/Temporary/vandermonde.png}
-
-\textbf{Q-Vandermonde Convolution} \\
-\includegraphics[width=0.6\linewidth]{source/5-maths/Temporary/qVandermonde1.png} \\
-\begin{multicols*}{2}
-  int m,n \\
-  \includegraphics[width=0.7\linewidth]{source/5-maths/Temporary/qVandermonde2.png}
-  \columnbreak
-  int $l \geq 0$, int m,n \\
-  \includegraphics[width=0.7\linewidth]{source/5-maths/Temporary/qVandermonde3.png}
-\end{multicols*}
-\begin{multicols*}{2}
-  int $l \geq 0$, int m,n \\
-  \includegraphics[width=\linewidth]{source/5-maths/Temporary/qVandermonde4.png}
-  \columnbreak
-  int l,m, $m \geq 0$ \\
-  \includegraphics[width=\linewidth]{source/5-maths/Temporary/qVandermonde5.png}
-\end{multicols*}
-int $l,m \geq 0$, int $n \geq q \geq 0$ \\
-\includegraphics[width=0.4\linewidth]{source/5-maths/Temporary/qVandermonde6.png}
+\textbf{Vandermonde Convolution} \\
+\begin{huge}
+  ${\displaystyle \sum _{k_{1}+\cdots +k_{p}=m}{n_{1} \choose k_{1}}{n_{2} \choose k_{2}}\cdots {n_{p} \choose k_{p}}={n_{1}+\dots +n_{p} \choose m}}$
+\end{huge} \\
+\\
+\begin{normalsize}
+  ${\displaystyle \sum {l \choose m+k}{s \choose n+k}={l+s \choose l-m-n}}$
+  \hfill
+  ${\displaystyle \sum {l \choose m+k}{s+k \choose n}{(-1)^{k}}={(-1)^{l+m}}{s-m \choose n-l}}$
+\end{normalsize} \\
+\\
+\begin{normalsize}
+  ${\displaystyle \sum {l-k \choose m}{q+k \choose n}={l+q+1 \choose m+n+1}}$
+  \hfill
+  ${\displaystyle \sum {l-k \choose m}{s \choose k-n}{(-1)^{k}}={(-1)^{l+m}}{s-m-1 \choose l-m-n}}$
+\end{normalsize}
 
 \end{large}
