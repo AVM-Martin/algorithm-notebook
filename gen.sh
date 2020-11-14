@@ -16,6 +16,8 @@ gen_printUsage() {
 
 # check
 gen_check() {
+	echo -e "SOURCE"
+	echo -e "======"
 	for obj in $(ls -pd source/*/*) ; do
 		if [ "$obj" == "${obj%/}" ] ; then
 			if ! grep "$obj" contents.tex > "/dev/null" ; then
@@ -23,6 +25,18 @@ gen_check() {
 			fi
 		fi
 	done
+	echo -e ""
+
+	echo -e "OEIS"
+	echo -e "===="
+	for obj in $(ls -pd OEIS/*) ; do
+		if [ "$obj" == "${obj%/}" ] ; then
+			if ! grep "$obj" random_oeis.tex > "/dev/null" ; then
+				echo -e "$obj"
+			fi
+		fi
+	done
+	echo -e ""
 }
 
 # remove
