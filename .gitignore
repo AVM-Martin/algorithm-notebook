@@ -1,7 +1,9 @@
-# ignore COVA and TEMPLATE folder
+# ignore build directory
+build/
+
+# ignore COVA and TEMPLATE directory
 cova/*
 template/*
 
-# ignore all latex output
-Notebook.*
+# ignore latex output
 notebook.pdf

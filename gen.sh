@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+FILENAME="notebook"
+BUILD_DIR="build"
+LATEX_OPTION="-output-directory ${BUILD_DIR}"
+LATEX_OPTION_QUIET="--interaction=batchmode -halt-on-error"
+
 # info
 gen_printUsage() {
 	echo -e "usage: ./gen <command>"
@@ -41,27 +46,27 @@ gen_check() {
 
 # remove
 gen_clean() {
-	touch Notebook.avm
-	rm Notebook.*
+	rm --recursive --force "${BUILD_DIR}"
 }
 
 # generate
 gen_generate() {
-	# remove pdf file
-	if [ -f notebook.pdf ] ; then
-		rm notebook.pdf
+	if [ -f "${FILENAME}.pdf" ] ; then
+		rm "${FILENAME}.pdf"
 	fi
 
-	pdflatex --interaction=batchmode -jobname=Notebook -halt-on-error notebook.tex > /dev/null 2>&1
+	mkdir --parents "${BUILD_DIR}"
+
+	pdflatex ${LATEX_OPTION_QUIET} ${LATEX_OPTION} "${FILENAME}.tex" > /dev/null 2>&1
 
 	# check error status
 	if [ $? = 0 ] ; then
-		pdflatex --interaction=batchmode -halt-on-error -jobname=Notebook notebook.tex > /dev/null 2>&1
-		pdflatex --interaction=batchmode -halt-on-error -jobname=Notebook notebook.tex > /dev/null 2>&1
-		mv Notebook.pdf notebook.pdf
+		pdflatex ${LATEX_OPTION_QUIET} ${LATEX_OPTION} "${FILENAME}.tex" > /dev/null 2>&1
+		pdflatex ${LATEX_OPTION_QUIET} ${LATEX_OPTION} "${FILENAME}.tex" > /dev/null 2>&1
+		mv "${BUILD_DIR}/${FILENAME}.pdf" "${FILENAME}.pdf"
 		echo -e "DONE"
 	else
-		pdflatex -jobname=Notebook notebook.tex
+		pdflatex ${LATEX_OPTION} "${FILENAME}.tex"
 	fi
 }
 
