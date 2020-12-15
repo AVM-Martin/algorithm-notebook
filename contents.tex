@@ -10,6 +10,7 @@
 
 \subsection{Bash Script}
 \lstinputlisting[language=bash]{source/1-introduction/compile.sh}
+\lstinputlisting[language=command.com]{source/1-introduction/compile.bat}
 \lstinputlisting[language=bash]{source/1-introduction/keyboard_map.sh}
 
 \subsection{Bit Operations}
@@ -29,8 +30,8 @@
 % \lstinputlisting[language=c++]{source/2-data-structures/BinaryIndexedTree.cpp}
 \input{source/2-data-structures/BinaryIndexedTree.tex}
 
-\subsection{AVL Tree}
-\input{source/2-data-structures/AVL-Tree.tex}
+% \subsection{AVL Tree}
+% \input{source/2-data-structures/AVL-Tree.tex}
 % \lstinputlisting[language=c++]{source/2-data-structures/AVL-Tree.cpp}
 
 \subsection{Link Cut Tree}
@@ -44,8 +45,8 @@
 \subsection{Mo Algorithm}
 \lstinputlisting[language=c++]{source/2-data-structures/Mo-Algorithm.cpp}
 
-\subsection{Misof Tree}
-\lstinputlisting[language=c++]{source/2-data-structures/Misof-Tree.cpp}
+% \subsection{Misof Tree}
+% \lstinputlisting[language=c++]{source/2-data-structures/Misof-Tree.cpp}
 
 \subsection{DSU on Tree}
 \lstinputlisting[language=c++]{source/2-data-structures/DisjointSetsUnion-onTree.cpp}
@@ -57,6 +58,9 @@
 \subsection{Heavy-Light Decomposition}
 \lstinputlisting[language=c++]{source/2-data-structures/HeavyLightDecomposition.cpp}
 
+\subsection{Centroid Decomposition}
+\lstinputlisting[language=c++]{source/2-data-structures/CentroidDecomposition.cpp}
+
 \subsection{Treap}
 \input{source/2-data-structures/Treap.tex}
 % \lstinputlisting[language=c++]{source/2-data-structures/Treap_malfple.cpp}
@@ -66,6 +70,7 @@
 
 \subsection{Policy-Based Data Structures}
 \lstinputlisting[language=c++]{source/2-data-structures/PBDS_kactl.cpp}
+\lstinputlisting[language=c++]{source/2-data-structures/PBDS-IntervalTree_geeksforgeeks.cpp}
 
 % ====================================================================================================
 % Data Structures
@@ -83,8 +88,8 @@
 % \subsection{DP Buka String dan Lipat String}
 % \lstinputlisting[language=c++]{source/9-etc/DP-Buka-String-Lipat-String.cpp}
 
-\subsection{Matrix Chain Multiplication}
-\lstinputlisting[language=c++]{source/3-dynamic-programming/MatrixChainMultiplication.cpp}
+% \subsection{Matrix Chain Multiplication}
+% \lstinputlisting[language=c++]{source/3-dynamic-programming/MatrixChainMultiplication.cpp}
 
 \subsection{Min Cost Polygon Triagulation}
 \lstinputlisting[language=c++]{source/3-dynamic-programming/MinCostPolygonTriagulation.cpp}
@@ -222,6 +227,9 @@
 % \lstinputlisting[language=c++]{source/6-string-processing/SuffixArray_hantansu98.cpp}
 % \lstinputlisting[language=c++]{source/6-string-processing/SuffixArray-enhanced.cpp}
 
+\subsection{Suffix Automata}
+\lstinputlisting[language=c++]{source/6-string-processing/SuffixAutomata.cpp}
+
 \subsection{Aho Corasick}
 \lstinputlisting[language=c++]{source/6-string-processing/AhoCorasick.cpp}
 
@@ -233,6 +241,9 @@
 
 \subsection{Manacher's Algorithm (Palindromic Substring)}
 \lstinputlisting[language=c++]{source/6-string-processing/ManachersAlgorithm.cpp}
+
+\subsection{Lyndon Factorization (min cyclic rotation)}
+\lstinputlisting[language=c++]{source/6-string-processing/Lyndon-minCyclic.cpp}
 
 % ====================================================================================================
 % Etc
@@ -262,6 +273,9 @@
 \subsection{RDN (goto 0001/01/01)}
 \lstinputlisting[language=c++]{source/9-etc/RDN.cpp}
 
+\subsection{Josephus Problem}
+\lstinputlisting[language=c++]{source/9-etc/Josephus-cpalgorithm.cpp}
+
 % ====================================================================================================
 % Mathematics
 \section{Mathematics}
@@ -269,14 +283,18 @@
 % \subsection{Big Integer}
 % \lstinputlisting[language=c++]{source/5-maths/BigInteger.cpp}
 
-\subsection{Fast Fourier Transform + NTT}
+\subsection{Fast Fourier Transform + NTT + FWHT}
 \lstinputlisting[language=c++]{source/5-maths/FFT+NTT.cpp}
+\lstinputlisting[language=c++]{source/5-maths/FWHT.cpp}
 
 % \subsection{Gauss Elimination}
 % \lstinputlisting[language=c++]{source/5-maths/GaussElimination.cpp}
 
 \subsection{Number Theory}
 \input{source/5-maths/NumberTheory.tex}
+
+\subsection{Quadratic Residue}
+\lstinputlisting[language=c++]{source/5-maths/QuadraticResidue_chemthan.cpp}
 
 \subsection{Random Combinatorics}
 \input{source/5-maths/Combinatorics-Narayana.tex}
@@ -285,8 +303,8 @@
 \subsection{Necklace and Bracelets Combinatorics}
 \input{source/5-maths/Combinatorics-NecklaceBracelets.tex}
 
-% \subsection{Berlekamp Massey}
-% \lstinputlisting[language=c++]{source/5-maths/Sequence-BerlekampMassey_kactl.cpp}
+\subsection{Berlekamp Massey}
+\lstinputlisting[language=c++]{source/5-maths/Sequence-BerlekampMassey_kactl.cpp}
 
 \subsection{Mathematics Sequence Formula}
 \input{source/5-maths/Sequence-formula.tex}
@@ -310,6 +328,7 @@
 \subsection{Chinese Remainder Theorem}
 \lstinputlisting[language=c++]{source/5-maths/ChineseRemainderTheorem.cpp}
 \lstinputlisting[language=c++]{source/5-maths/ChineseRemainderTheorem_whyzker.cpp}
+\lstinputlisting[language=c++]{source/5-maths/ChineseRemainderTheorem_rfpermen.cpp}
 
 \subsection{Euler Totient (Phi) Function}
 \input{source/5-maths/Totient.tex}
@@ -377,17 +396,26 @@
 \subsection{Polygon Diameter}
 \lstinputlisting[language=c++]{source/7-geometry/Polygon-diameter.cpp}
 
+\subsection{Minimum Enclosing Circle}
+\lstinputlisting[language=c++]{source/7-geometry/Polygon-minimumEnclosingCircle.cpp}
+
 \subsection{Rotating Calipers}
 \lstinputlisting[language=c++]{source/7-geometry/RotatingCalipers_kuningfellow.cpp}
 
 \subsection{Union Rectangle Intersection}
 \lstinputlisting[language=c++]{source/7-geometry/Rectangle-unionIntersection.cpp}
 
+\subsection{Winding Number}
+\lstinputlisting[language=c++]{source/7-geometry/WindingNumber.cpp}
+
 \subsection{Great Circle Distance}
 \lstinputlisting[language=c++]{source/7-geometry/Sphere-GreatCircleDistance.cpp}
 
 % \subsection{From maxhaibara}
 % \lstinputlisting[language=c++]{source/7-geometry/AllRandomStuffs_maxhaibara.cpp}
+
+% \subsection{Sutherland Hodgman}
+% \lstinputlisting[language=c++]{source/7-geometry/SutherlandHodgman.cpp}
 
 % ====================================================================================================
 % Random OEIS
