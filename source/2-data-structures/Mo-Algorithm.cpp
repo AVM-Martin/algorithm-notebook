@@ -31,3 +31,5 @@ int main() {
 	}
 	for (int i=0; i<q; i++) printf("%d\n", answer[i]);
 }
+// Mo's on tree: ST(u) <= ST(v), P = LCA(u,v)
+// if P == u then query [ST(u),ST(v)] else query [EN(u),ST(v)] + [ST(P),ST(P)]

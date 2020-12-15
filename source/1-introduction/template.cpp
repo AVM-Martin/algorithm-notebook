@@ -16,8 +16,9 @@ void ioSync() { // iostream sync
 }
 void randomStuff() { // better random: https://codeforces.com/blog/entry/61587
 	mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-	int random_number = uniform_int_distribution<int>(0, i)(rng);
+	int random_number = uniform_int_distribution<int>(0, i)(rng); // mt19937_64
 	// shuffle(vec.begin(), vec.end(), rng);
+	// v.erase(unique(v.begin(), v.end()), v.end());
 }
 #define getc getchar
 template<typename T> T getnum(){

@@ -30,3 +30,17 @@ void polyMultiplication(vec& res, vec& a, vec& b) {
 	a.resize(n);  b.resize(n);   FFT(a);  FFT(b);
 	for (int i=0; i<n; i++) res.push_back(a[i]*b[i]);  FFT(res,-1);
 } // result: res (in vec) => (int)(real(x) + (double)0.5)
+int primitive_root(long long mod) {
+	vector<long long> fact;  long long phi = mod - 1, n = phi;
+	for (long long i=2; i * i <= n; i++) if (n % i == 0) {
+		fact.push_back(i);  while (n % i == 0) n /= i;
+	}
+	if (n > 1) fact.push_back(n);
+	for (long long res=2; res<=mod; res++) {
+		bool ok = true;
+		for (long long x: fact) {
+			if ((ok &= (fastExp(res, phi / x) != 1)) == false) break;
+		}
+		if (ok) return res;
+	} return -1;
+}

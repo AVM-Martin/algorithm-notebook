@@ -21,24 +21,25 @@ A sequence of non-negative integers $ d_1 \leq \dotsc \leq d_n $, can be represe
 \textbf{Derangement}
 \begin{lstlisting}[language=c++]
 ll der[15];   der[0] = 1;   der[1] = 0;
-REP(i,2,10) der[i] = (ll)(i-1) * (der[i-1] + der[i-2]);
+for (int i=2; i<=10; i++) der[i] = (ll)(i-1) * (der[i-1] + der[i-2]);
 \end{lstlisting}
 
 \textbf{Bell Number} \\
 The number of ways a set of n elements can be partitioned into nonempty subsets
 \begin{lstlisting}[language=c++]
 ll bell[25+5][25+5];   bell[0][0] = 1;
-REP(i,1,maks){
+for (int i=1; i<=maks; i++) {
     bell[i][0] = bell[i-1][i-1];
-    REP(j,1,i) bell[i][j] = bell[i-1][j-1] + bell[i][j-1];
-} // Example : n=10 ==> bell[10][0]
+    for (int j=1; j<=i; j++) bell[i][j] = bell[i-1][j-1] + bell[i][j-1];
+} // Example : n = 10 ==> bell[10][0]
 \end{lstlisting}
 
 \textbf{Stirling Number 2nd Kind} \\
 The number of ways a set of n elements into k subsets)
 \begin{lstlisting}[language=c++]
-int stir[n+1][k+1];  REP(i,0,n) REP(j,0,k) stir[i][i] = 0;
-REP(i,1,n) REP(j,1,i){
+int stir[n+1][k+1];
+for (int i=0; i<=n; i++) for (int j=0; j<=k; j++) stir[i][i] = 0;
+for (int i=1; i<=n; i++) for (int j=1; j<=i; j++) {
     if (j == 1 || i == j) stir[i][j] = 1;
     else stir[i][j] = j*stir[i-1][j] + stir[i-1][j-1];
 } // S(n,k) = k*S(n-1,k) + S(n-1,k-1)
@@ -47,11 +48,18 @@ REP(i,1,n) REP(j,1,i){
 \textbf{Carmichael Number} \\
 Composite numbers n such that $a^{n-1} \equiv 1 \pmod{n}$ for every a coprime to n.
 \begin{lstlisting}[language=c++]
-// 561, 1105, 1729, 2465, 2821, 6601, 8911, 10585, 15841, 29341
-// 41041, 46657, 52633, 62745, 63973, 75361, 101101, 115921, 126217
-// 162401, 172081, 188461, 252601, 278545, 294409, 314821, 334153
-// 340561, 399001, 410041, 449065, 488881, 512461
+// 561, 1105, 1729, 2465, 2821, 6601, 8911, 10585, 15841, 29341, 41041, 46657,
+// 52633, 62745, 63973, 75361, 101101, 115921, 126217, 162401, 172081, 188461,
+// 252601, 278545, 294409, 314821, 334153, 340561, 399001, 410041, 449065,
 \end{lstlisting}
+
+\textbf{Stars and Bars with Upper Bound} \\
+Let $P = \prod \left(1 - X^{r_i + 1}\right) = \sum c_i X^{e_i}$ with $r_i$ as the upper bound. Then the result is equal to \\
+${\displaystyle \sum c_i {N-e_i+n-1 \choose n-1}}$
+
+\textbf{Multi-Level Arithmetic Sequence} \\
+Define $A$ as the first term of each level. Try A[0..2] = {1, 5, 4} and get $U_n = 28$.
+${\displaystyle U_n = \sum_{i=0}^{i=n-1} {n-1 \choose i} A_i}$ \\
 
 \textbf{Vandermonde Convolution} \\
 \begin{huge}
