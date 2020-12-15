@@ -1,13 +1,14 @@
 // Source: https://github.com/chemthan/chemthan
 // Desc  : Find x such that (x * x) % mod == a
-// Time  :
-// Status:
-const int MAXN = 1e5 + 5;  int qn[MAXN];
+// Time  : O(log MOD)
+// Status: https://www.codechef.com/DEC20A/problems/LCASQRT
+map<long long, long long> qn;
 long long calc(long long a, long long mod) {
+	if (a == 0) return 0;
 	if (fastExp(a, (mod - 1) / 2, mod) != 1) return -1;
 	if (mod % 4 == 3) return fastExp(a, (mod + 1) / 4, mod);
 	long long q = mod - 1, s = 0, z = 1;  for (; q % 2 == 0; q /= 2) s++;
-	if (qn[mod]) z = qn[mod];
+	if (qn.find(mod) != qn.end()) z = qn[mod];
 	else while (fastExp(z, (mod - 1) / 2, mod) != mod - 1) qn[mod] = (z += 1);
 	long long c = fastExp(z, q, mod), r = fastExp(a, (q + 1) / 2, mod);
 	long long t = fastExp(a, q, mod), m = s;
