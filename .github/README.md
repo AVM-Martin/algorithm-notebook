@@ -29,5 +29,16 @@ My personal team notebook. Run "./gen.sh" to generate the notebook
 ## Todo
 
 *none*
+* Centroid Decomposition + LCA (Binary Lifting)
+* Mo’s Algorithm
+* Dynamic Conectivity / Link Cut Tree + Splay
+* Dynamic LCA
+* Min Weight Perfect Matching + SPFA
+* Extended Euclid + Diophantine + CRT
+* Shunting Yard
+* Sliding Window Minimum
+* Polygon Diameter + Rotating Caliper (not adapted with template)
+* Hook Length Formula + Young Tableaux
+* Random OEIS
 
 # EOF
