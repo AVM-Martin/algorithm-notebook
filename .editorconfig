@@ -1,14 +1,26 @@
 root = true
 
-; cpp java py sh
 [*]
 charset = utf-8
+indent_style = unset
+indent_size = unset
 end_of_line = lf
-insert_final_newline = true
-indent_style = tab
-indent_size = 4
 trim_trailing_whitespace = true
+insert_final_newline = true
 
 [*.tex]
 indent_style = spaces
 indent_size = 2
+
+[*.md]
+indent_style = spaces
+indent_size = 2
+
+[*.sh]
+indent_style = spaces
+indent_size = 2
+
+# all source codes
+[source/**.{bat,cpp,java,py,sh}]
+indent_style = tab
+indent_size = 4
