@@ -126,6 +126,6 @@ vector<point> sortku (vector<point> P){
 	return P;
 }
 int main{
-   clipper_points = sortku(clipper_points);
-   suthHodgClip(poly_points, clipper_points);
+	clipper_points = sortku(clipper_points);
+	suthHodgClip(poly_points, clipper_points);
 }

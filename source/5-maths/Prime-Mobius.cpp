@@ -15,5 +15,5 @@ void mobius() {
 		else M[i] = M[i/SPF[i]] * M[SPF[i]];
 }	}
 inline short int mobius(int k) { // dp[1] = 1, p[] = faktor prima terbesar
-    ls = k / p[k];  return dp[k] = (p[k] == p[ls] || !dp[ls]) ? 0 : -dp[ls];
+	ls = k / p[k];  return dp[k] = (p[k] == p[ls] || !dp[ls]) ? 0 : -dp[ls];
 }
