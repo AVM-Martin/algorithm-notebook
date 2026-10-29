@@ -4,41 +4,22 @@ My personal team notebook. Run "./gen.sh" to generate the notebook
 
 ## Dependencies
 
-* pdflatex
-* Packages: amsmath, multicol, pdflscape, geometry, color, listings
-* Packages: eso-pic, graphicx, verbatim, lastpage, fancyhdr
+  * pdflatex
+  * Packages: amsmath, multicol, pdflscape, geometry, color, listings
+  * Packages: eso-pic, graphicx, verbatim, lastpage, fancyhdr
 
-# How to contribute
+## Contribution
 
-* Create a new branch in order to contribute your source code.
-* Use tab indentation instead of spaces.
-* Create a compact file with ruler at 80.
-* Create equation in latex with huge fontsize (not Huge).
+  * Create a new branch in order to contribute your source code.
+  * Use tab indentation instead of spaces.
+  * Create a compact file with ruler at 80.
+  * Create equation in latex with huge fontsize (not Huge).
 
-# Note
 
-## Issue
 
-* uncheck   : biginteger, geometry random stuff maxhaibara
-* watch out : trig-eq
-* pics (fix): geom-paper
-* adding    : *none*
-* review    : *none*
-* compare   : hopcroft karp, hungarian
+# References
 
-## Todo
-
-*none*
-* Centroid Decomposition + LCA (Binary Lifting)
-* Mo’s Algorithm
-* Dynamic Conectivity / Link Cut Tree + Splay
-* Dynamic LCA
-* Min Weight Perfect Matching + SPFA
-* Extended Euclid + Diophantine + CRT
-* Shunting Yard
-* Sliding Window Minimum
-* Polygon Diameter + Rotating Caliper (not adapted with template)
-* Hook Length Formula + Young Tableaux
-* Random OEIS
-
-# EOF
+  * https://github.com/t3nsor/codebook
+  * https://github.com/kth-competitive-programming/kactl
+  * https://github.com/ngthanhtrung23/ACM_Notebook_new
+  * https://github.com/Malfple/quickpastetemplate
